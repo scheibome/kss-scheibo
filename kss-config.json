@@ -1,0 +1,17 @@
+{
+  "title"        : "KSS-Scheibo Theme",
+  "mask"         : "*.scss",
+  "placeholder"  : "[modifier]",
+
+"//": "relative to this file.",
+  "builder"      : "kss_styleguide/scheibo-template/",
+  "source"       : "source/",
+  "destination"  : "kss_styleguide/scheibo-template/",
+
+"//": "relative to source.",
+  "homepage"     : "../kss_styleguide/kss-homepage.md",
+
+"//": "relative to the generated style guide.",
+  "css": [],
+  "js" : []
+}

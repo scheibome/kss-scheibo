@@ -1,0 +1,205 @@
+{
+  /**
+   * -----------------------------------------------------------------------------
+   *
+   * Please contact roland.waldner@in2code.de before you modify this file.
+   *
+   * -----------------------------------------------------------------------------
+   *
+   * This is the project's configuration file for the JavaScript codesniffing tool
+   * jscs (Javascript Codesniffer). It can be used when working with jscs on the
+   * console, in IDEs (not yet supported by PhpStorm), with build tools or
+   * continuous integration enviroments.
+   *
+   * Stay awesome and use jscs and this configuration file to create heigh
+   * quality JavaScript code!
+   *
+   * https://github.com/mdevils/node-jscs
+   *
+   * -----------------------------------------------------------------------------
+   *
+   * This setup is tested with jscs 1.5.8 and should be re-evaluated and
+   * compared from time to time with the supported options which can be found
+   * in in the jscs documentation:
+   *
+   * https://github.com/mdevils/node-jscs
+   *
+   * Date of latest evaluation: 2014-07-25
+   *
+   * -----------------------------------------------------------------------------
+   */
+
+  //	"preset": "jquery",
+  "fileExtensions": ".js",
+  "excludeFiles": [],
+  "requireCurlyBraces": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch",
+    "case",
+    "default"
+  ],
+  "requireSpaceAfterKeywords": [
+    "if",
+    "else",
+    "for",
+    "while",
+    "do",
+    "switch",
+    "return",
+    "try",
+    "catch"
+  ],
+  "disallowSpaceAfterKeywords": [],
+  "requireSpaceBeforeBlockStatements": true,
+  //	"disallowSpaceBeforeBlockStatements": true,
+  "requireParenthesesAroundIIFE": true,
+  "requireSpacesInConditionalExpression": {
+    "afterTest": true,
+    "beforeConsequent": true,
+    "afterConsequent": true,
+    "beforeAlternate": true
+  },
+  //	"disallowSpacesInConditionalExpression": {
+  //		"afterTest": true,
+  //		"beforeConsequent": true,
+  //		"afterConsequent": true,
+  //		"beforeAlternate": true
+  //	},
+  "requireSpacesInFunctionExpression": {
+    //		"beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+    //		"beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInAnonymousFunctionExpression": {
+    //		"beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+    //		"beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInNamedFunctionExpression": {
+    //		"beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInNamedFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+    //		"beforeOpeningCurlyBrace": true
+  },
+  "requireSpacesInFunctionDeclaration": {
+    //		"beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
+  "disallowSpacesInFunctionDeclaration": {
+    "beforeOpeningRoundBrace": true
+    //		"beforeOpeningCurlyBrace": true
+  },
+  // Is this rule supported?
+  //	"requireSpacesInFunction": {
+  //		"beforeOpeningRoundBrace": true,
+  //		"beforeOpeningCurlyBrace": true
+  //	},
+  // Is this rule supported?
+  //	"disallowSpacesInFunction": {
+  //		"beforeOpeningRoundBrace": true
+  //		"beforeOpeningCurlyBrace": true
+  //	},
+  "disallowMultipleVarDecl": true,
+  //	"requireMultipleVarDecl": true,
+  "requireBlocksOnNewline": true,
+  //	"requirePaddingNewlinesInBlocks": true,
+  "disallowPaddingNewlinesInBlocks": true,
+  "disallowEmptyBlocks": true,
+  //	"disallowSpacesInsideObjectBrackets": false,
+  //	"disallowSpacesInsideArrayBrackets": false,
+  //	"disallowSpacesInsideParentheses": false,
+  //	"requireSpacesInsideObjectBrackets": "all",
+  //	"requireSpacesInsideArrayBrackets": "all",
+  //	"requireSpacesInsideParentheses": "all",
+  "disallowQuotedKeysInObjects": true,
+  "disallowDanglingUnderscores": true,
+  "disallowSpaceAfterObjectKeys": true,
+  //	"requireSpaceAfterObjectKeys": true,
+  //	"disallowCommaBeforeLineBreak": true,
+  "requireCommaBeforeLineBreak": true,
+  //	"requireAlignedObjectValues": "all",
+  "requireOperatorBeforeLineBreak": true,
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "requireSpaceAfterPrefixUnaryOperators": [],
+  "disallowSpaceBeforePostfixUnaryOperators": true,
+  "requireSpaceBeforePostfixUnaryOperators": [],
+  "disallowSpaceBeforeBinaryOperators": [],
+  "requireSpaceBeforeBinaryOperators": [
+    "=",
+    "+",
+    "-",
+    "/",
+    "*",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "disallowSpaceAfterBinaryOperators": [],
+  "requireSpaceAfterBinaryOperators": [
+    "=",
+    ",",
+    "+",
+    "-",
+    "/",
+    "*",
+    "==",
+    "===",
+    "!=",
+    "!=="
+  ],
+  "disallowImplicitTypeConversion": [
+    "numeric",
+    "boolean",
+    "binary",
+    "string"
+  ],
+  "requireCamelCaseOrUpperCaseIdentifiers": true,
+  "disallowKeywords": [],
+  "disallowMultipleLineStrings": true,
+  "disallowMultipleLineBreaks": true,
+  "validateLineBreaks": "LF",
+  "validateQuoteMarks": true,
+  "validateIndentation": "\t",
+  "disallowMixedSpacesAndTabs": "smart",
+  "disallowTrailingWhitespace": true,
+  "disallowTrailingComma": true,
+  //	"requireTrailingComma": true,
+  "disallowKeywordsOnNewLine": [
+    "else"
+  ],
+  "requireKeywordsOnNewLine": [],
+  "requireLineFeedAtFileEnd": true,
+  "maximumLineLength": 130,
+  "requireCapitalizedConstructors": true,
+  "safeContextKeyword": [
+    "that"
+  ],
+  "requireDotNotation": true,
+  //"requireYodaConditions": true,
+  "disallowYodaConditions": true,
+  "jsDoc": {
+    "checkParamNames": true,
+    "checkRedundantParams": true,
+    "requireParamTypes": true
+  },
+  "requireSpaceAfterLineComment": true
+  //	"disallowSpaceAfterLineComment": true,
+  // Is this rule supported?
+  //	"disallowAnonymousFunctions": true,
+  // Is this rule supported?
+  //	"requireAnonymousFunctions": true
+}

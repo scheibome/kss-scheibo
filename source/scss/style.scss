@@ -1,0 +1,89 @@
+/*------------------------------------*\
+  #IMPORTS
+\*------------------------------------*/
+
+/**
+ * Final main CSS file composed of separated Sass files. New created Sass files
+ * need to be added here to have any effect.
+ *
+ * The order of the import directives is important. Changing the file order
+ * within an import directive however should do no harm in most cases.
+ */
+
+
+
+
+
+/*------------------------------------*\
+  #MODULES
+\*------------------------------------*/
+
+@import '_modules/settings',
+        '_modules/mixins',
+        '_modules/normalize';
+
+
+
+
+
+/*------------------------------------*\
+  #VENDOR
+\*------------------------------------*/
+
+ //@import '_vendor/mediabox';
+
+
+
+
+
+/*------------------------------------*\
+  #PATTERNS
+\*------------------------------------*/
+
+/*
+Patterns
+
+Styleguide 1.0
+*/
+
+// @import '01_patterns/general';
+
+
+
+
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+Components
+
+Styleguide 2.0
+*/
+
+// @import '02_components/icons';
+
+
+
+
+
+/*------------------------------------*\
+  #LAYOUTS
+\*------------------------------------*/
+
+/*
+Layouts
+
+Styleguide 3.0
+*/
+
+//@import '03_layouts/contentarea';
+
+
+
+
+
+/*------------------------------------*\
+  #Fullpages
+\*------------------------------------*/

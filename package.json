@@ -1,0 +1,26 @@
+{
+  "name": "kss-scheibo",
+  "version": "0.0.1",
+  "description": "A custom template for the kss-node living styleguide.",
+  "repository": "https://github.com/scheibome/kss-scheibo.git",
+  "license": "MIT",
+  "homepage": "https://github.com/scheibome/kss-scheibo",
+  "scripts": {
+    "kss": "kss --config kss-config.json",
+    "kss:show": "opn kss_styleguide/scheibo-template/index.html"
+  },
+  "devDependencies": {
+    "kss": "^3.0.0-beta.20"
+  },
+  "keywords": [
+    "kss",
+    "kss-node",
+    "styleguide",
+    "css",
+    "scss",
+    "template",
+    "theme",
+    "living styleguide",
+    "LSG"
+  ]
+}
