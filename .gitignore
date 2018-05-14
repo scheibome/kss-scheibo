@@ -1,14 +1,8 @@
-###
-## diese Dateien/Ordner nicht mit GIT versionieren
-###
 
-# IDE spezielle Dateien
 msi.iws
 .idea/
 nbproject/
 .sass-cache/
-
-# OS spezielle Dateien
 .DS_Store
 .DS_Store?
 ._*
@@ -22,4 +16,4 @@ google.xml
 rss.xml
 
 /node_modules
-/styleguide
+/kss_styleguide/scheibo-template/*.html

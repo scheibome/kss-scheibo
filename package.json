@@ -6,11 +6,13 @@
   "license": "MIT",
   "homepage": "https://github.com/scheibome/kss-scheibo",
   "scripts": {
-    "kss": "kss --config kss-config.json",
-    "kss:show": "opn kss_styleguide/scheibo-template/index.html"
+    "kss": "kss --config kss-config.json"
   },
   "devDependencies": {
-    "kss": "^3.0.0-beta.20"
+    "csspattern": "git+ssh://git@bitbucket.org/scheibitz/csspatterns.git",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-uncss": "^1.0.6"
   },
   "keywords": [
     "kss",
@@ -22,5 +24,8 @@
     "theme",
     "living styleguide",
     "LSG"
-  ]
+  ],
+  "dependencies": {
+    "kss": "^3.0.0-beta.20"
+  }
 }

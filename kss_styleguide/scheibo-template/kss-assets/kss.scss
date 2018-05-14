@@ -1,6 +1,6 @@
-@import '../../../lib/settings',
-        '../../../lib/mixins',
-        '../../../lib/objects';
+@import '../../../node_modules/csspattern/lib/settings',
+        '../../../node_modules/csspattern/lib/mixins',
+        '../../../node_modules/csspattern/lib/objects';
 
 a {
   @extend .text-current;
