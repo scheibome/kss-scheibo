@@ -5,3 +5,5 @@ gulpfile.js
 .package-lock.json
 .jscsrc
 .jshintrc
+.idea/
+.editorconfig

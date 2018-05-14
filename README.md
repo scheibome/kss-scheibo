@@ -1,8 +1,6 @@
-### folderstructure
+# Install
 
-`npm install kss --save-dev`
-
-`npm install https://github.com/scheibome/kss-scheibo.git --save-dev`
+`npm install kss-scheibo --save-dev`
 
 
 ##### kss-config.json
