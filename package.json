@@ -1,10 +1,11 @@
 {
   "name": "kss-scheibo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
   "homepage": "https://github.com/scheibome/kss-scheibo",
+  "author": "Thomas Scheibitz <npm@scheibitz.com> (https://www.scheibitz.com)",
   "scripts": {
     "kss": "kss --config kss-config.json"
   },
