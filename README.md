@@ -24,6 +24,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 ### Generate
 
 Generate your styleguide with the following line:
+
 `node node_modules/kss/bin/kss --config kss-scheibo.json`
 
 ### Using kss-scheibo with Gulp
