@@ -7,7 +7,7 @@
   "homepage": "https://github.com/scheibome/kss-scheibo",
   "author": "Thomas Scheibitz <npm@scheibitz.com> (https://www.scheibitz.com)",
   "scripts": {
-    "kss": "kss --config kss-config.json"
+    "kss": "kss --config kss-scheibo.json"
   },
   "devDependencies": {
     "csspattern": "git+ssh://git@bitbucket.org/scheibitz/csspatterns.git",
