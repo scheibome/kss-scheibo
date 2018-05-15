@@ -56,6 +56,20 @@ Markup: <div class="example">This is a example.</div>
 Styleguide 1.1
 */
 
+/*
+Patterns - Example
+
+.example - example
+
+Markup:
+  <div class="example">
+    This is a example.
+    <insert-markup>1.1</insert-markup>
+  </div>
+
+Styleguide 1.1.1
+*/
+
 .example {
   background-color: #fff000;
 }
