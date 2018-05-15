@@ -1,6 +1,7 @@
 kss_styleguide/scheibo-template/kss-assets/kss.scss
 gulpfile.js
 /kss_styleguide/scheibo-template/*.html
+kss-scheibo/
 .gitignore
 .package-lock.json
 .jscsrc
