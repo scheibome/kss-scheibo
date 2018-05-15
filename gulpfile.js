@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uncss = require('gulp-uncss');
+var exec = require('child_process').exec;
 
 gulp.task('sass', function() {
 	return gulp.src('kss_styleguide/scheibo-template/kss-assets/**/*.scss')
@@ -15,6 +16,13 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest('kss_styleguide/scheibo-template/kss-assets/'));
 });
 
-gulp.task('sass:watch', function() {
+gulp.task('kss', function(cb) {
+	exec('node node_modules/kss/bin/kss --config kss-scheibo.json', function(err) {
+		cb(err);
+	});
+});
+
+gulp.task('watch', ['sass', 'kss'], function() {
 	gulp.watch('kss_styleguide/scheibo-template/kss-assets/**/*.scss', ['sass']);
+	gulp.watch('kss_styleguide/**/**', ['kss']);
 });
