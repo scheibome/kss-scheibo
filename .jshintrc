@@ -95,7 +95,7 @@
   "boss"          : false,
   "debug"         : false,
   "eqnull"        : true,
-  "esnext"        : false,
+  "esnext"        : true,
   // If "evil" is set to "false" JSHint in PHPStorm notes that "'checkstate' is not defined"
   "evil"          : true,
   "expr"          : false,
