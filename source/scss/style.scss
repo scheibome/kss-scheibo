@@ -50,6 +50,8 @@ Styleguide 1.0
 Patterns - Example
 
 .example - example
+.example1 - example1
+.example2 - example2
 
 Markup: <div class="example">This is a example.</div>
 
@@ -64,6 +66,8 @@ Patterns - Example 2
 Markup:
   <div class="example2">
     This is second example with a insert markup
+    <insert-markup>1.1</insert-markup>
+    <insert-markup>1.1</insert-markup>
     <insert-markup>1.1</insert-markup>
     The Markup is above this line
   </div>

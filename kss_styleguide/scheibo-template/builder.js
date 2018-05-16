@@ -18,8 +18,8 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			let rawMatch = raw.match(/<insert-markup>(.*?)<\/insert-markup>/i);
 
 			if (markupMatch && raw) {
-				section.data.markup = markup.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/, styleGuide.sections(markupMatch[1]).data.markup);
-				section.meta.raw = raw.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/, styleGuide.sections(rawMatch[1]).meta.raw);
+				section.data.markup = markup.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g, styleGuide.sections(markupMatch[1]).data.markup);
+				section.meta.raw = raw.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g, styleGuide.sections(rawMatch[1]).meta.raw);
 			}
 		});
 	}
