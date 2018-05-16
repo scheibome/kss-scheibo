@@ -8,7 +8,7 @@
 
 ### Setup
 
-Add a file name `kss-scheibo.json` in your package.json root with the following lines.
+Create a file name `kss-scheibo.json` in your package.json root with the following lines.
 For all configurations see [kss-node documentation](https://github.com/kss-node/kss-node#using-the-command-line-tool)
 
 ```
@@ -20,6 +20,8 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
 }
 ```
+
+Create a `kss-homepage.md` and add your styles like [style-documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation) in your source folder.
 
 ### Generate
 
