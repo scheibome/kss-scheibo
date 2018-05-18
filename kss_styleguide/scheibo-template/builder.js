@@ -7,29 +7,23 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 	prepare(styleGuide) {
 		this.setupEachSection(styleGuide);
+		this.setupEachModifier(styleGuide);
 		return super.prepare(styleGuide);
 	}
 
-	setupEachModifier(modifiers) {
-		modifiers.sections().forEach(function(modifier) {
-
-			console.log(modifier);
-
-			// let modifier = section.modifiers();
-			// if (Object.keys(modifier).length > 0) {
-			// 	console.log(modifier);
-			// 	console.log(section.data.reference);
-			// }
+	setupEachModifier(styleGuide) {
+		styleGuide.sections().forEach(function(section) {
+			let modifier = section.modifiers();
+			if (Object.keys(modifier).length > 0) {
+				modifier.forEach(function(modi) {
+					console.log(modi);
+				});
+			}
 		});
 	}
 
 	setupEachSection(styleGuide) {
 		styleGuide.sections().forEach(function(section) {
-			let modifier = section.modifiers();
-			if (Object.keys(modifier).length > 0) {
-				this.setupEachModifier(modifier);
-			}
-
 			let markup = section.data.markup;
 			let markupMatch = markup.match(/<insert-markup>(.*?)<\/insert-markup>/i);
 
