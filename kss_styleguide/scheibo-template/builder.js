@@ -7,7 +7,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 	prepare(styleGuide) {
 		this.setupEachSection(styleGuide);
-		this.setupEachModifier(styleGuide);
+		// this.setupEachModifier(styleGuide);
 		return super.prepare(styleGuide);
 	}
 
@@ -25,16 +25,29 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	setupEachSection(styleGuide) {
 		styleGuide.sections().forEach(function(section) {
 			let markup = section.data.markup;
-			let markupMatch = markup.match(/<insert-markup>(.*?)<\/insert-markup>/i);
+			let markupMatch = markup.match(/<insert-markup>(.*?)<\/insert-markup>/g);
 
 			let raw = section.meta.raw;
-			let rawMatch = raw.match(/<insert-markup>(.*?)<\/insert-markup>/i);
+			let rawMatch = raw.match(/<insert-markup>(.*?)<\/insert-markup>/g);
 
 			if (markupMatch && raw) {
-				section.data.markup = markup.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g,
-					styleGuide.sections(markupMatch[1]).data.markup);
-				section.meta.raw = raw.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g,
-					styleGuide.sections(rawMatch[1]).meta.raw);
+				// console.log(styleGuide.sections('1.1').data.modifiers);
+
+				let i = 0;
+				markupMatch.forEach(function(markupItem) {
+					// console.log(styleGuide.sections('1.1').modifiers('1').className());
+					console.log(i, markupItem);
+					i++;
+				});
+
+				// console.log(raw.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g, styleGuide.sections(rawMatch[1]).meta.raw));
+
+				// console.log(styleGuide.sections(markupMatch[1]).data.markup);
+
+				// section.data.markup = markup.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g,
+				// 	styleGuide.sections(markupMatch[1]).data.markup);
+				// section.meta.raw = raw.replace(/<insert-markup>[\s\S]*?<\/insert-markup>/g,
+				// 	styleGuide.sections(rawMatch[1]).meta.raw);
 			}
 		});
 	}

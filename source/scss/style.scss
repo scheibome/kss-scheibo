@@ -53,10 +53,22 @@ Patterns - Example
 .example1 - example1
 .example2 - example2
 
-Markup: <div class="example">This is a example.</div>
+Markup: <div class="{{modifier_class}}">This is an example.</div>
 
 Styleguide 1.1
 */
+
+.example {
+  background-color: #fff000;
+}
+
+.example1 {
+  background-color: #ff0000;
+}
+
+.example2 {
+  background-color: #000fff;
+}
 
 /*
 Patterns - Example 2
@@ -64,11 +76,11 @@ Patterns - Example 2
 .example2 - example
 
 Markup:
-  <div class="example2">
+  <div class="{{modifier_class}}">
     This is second example with a insert markup
     <insert-markup>1.1</insert-markup>
-    <insert-markup>1.1</insert-markup>
-    <insert-markup>1.1</insert-markup>
+    <insert-markup>1.1-1</insert-markup>
+    <insert-markup>1.1-2</insert-markup>
     The Markup is above this line
   </div>
 
@@ -77,6 +89,14 @@ Styleguide 1.1.1
 
 .example {
   background-color: #fff000;
+}
+
+.example1 {
+  background-color: #ff0000;
+}
+
+.example2 {
+  background-color: #000fff;
 }
 
 // @import '01_patterns/general';
