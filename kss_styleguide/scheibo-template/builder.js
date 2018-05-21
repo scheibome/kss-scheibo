@@ -24,6 +24,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 	setupEachSection(styleGuide) {
 		styleGuide.sections().forEach(function(section) {
+			let regexModifier = /<insert-markup>([0-9\.]*\-?([0-9]*))<\/insert-markup>/gm;
 			let markup = section.data.markup;
 			let markupMatch = markup.match(/<insert-markup>(.*?)<\/insert-markup>/g);
 
@@ -36,7 +37,15 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				let i = 0;
 				markupMatch.forEach(function(markupItem) {
 					// console.log(styleGuide.sections('1.1').modifiers('1').className());
-					console.log(i, markupItem);
+					let modifier = regexModifier.exec(markupItem);
+
+					// console.log(i, markupItem);
+					if (modifier) {
+						console.log(markup);
+						console.log(modifier);
+					}
+
+
 					i++;
 				});
 
