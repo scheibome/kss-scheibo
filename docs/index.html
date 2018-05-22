@@ -47,8 +47,34 @@
   <main class="kss-main" aria-label="Content">
     <article>
         <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
-          <h1 id="kss-theme-from-scheibo">KSS Theme from Scheibo</h1>
+          <h1 id="kss-scheibo-a-template-for-the-kss-node-styleguide">KSS-Scheibo - a template for the KSS-node styleguide</h1>
+<p><a href="https://npmjs.org/package/kss-scheibo"><img src="https://badge.fury.io/js/kss-scheibo.svg?style=flat" alt="npm version"></a> <a href="https://github.com/scheibome/kss-scheibo/issues"><img src="http://img.shields.io/github/issues/scheibome/kss-scheibo.svg" alt="Issues"></a> <img src="https://img.shields.io/npm/dt/kss-scheibo.svg" alt="npm"></p>
+<h3 id="install">Install</h3>
+<p><code>npm install kss-scheibo --save-dev</code></p>
+<h3 id="setup">Setup</h3>
+<p>Create a file name <code>kss-scheibo.json</code> in your package.json root with the following lines.
+For all configurations see <a href="https://github.com/kss-node/kss-node#using-the-command-line-tool">kss-node documentation</a></p>
+<pre><code>{
+  &quot;title&quot;        : &quot;the name of your styleguide&quot;,
+  &quot;builder&quot;      : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
+  &quot;source&quot;       : &quot;assets/&quot;,
+  &quot;destination&quot;  : &quot;../styleguide/&quot;,
+  &quot;css&quot;          : [&#39;URL_of_a_CSS_file_to_include_in_the_style_guide.css&#39;]
+}
+</code></pre><p>Create a <code>kss-homepage.md</code> and add your styles like <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation">style-documentation</a> in your source folder.</p>
+<h3 id="generate">Generate</h3>
+<p>Generate your styleguide with the following line:</p>
+<p><code>node node_modules/kss/bin/kss --config kss-scheibo.json</code></p>
+<h3 id="using-kss-scheibo-with-gulp">Using kss-scheibo with Gulp</h3>
+<pre><code>var gulp = require(&#39;gulp&#39;);
+var exec = require(&#39;child_process&#39;).exec;
 
+gulp.task(&#39;kss&#39;, function(cb) {
+    exec(&#39;node node_modules/kss/bin/kss --config kss-scheibo.json&#39;, function(err) {
+        cb(err);
+    });
+});
+</code></pre>
         </div>
   </article>
   </main>
