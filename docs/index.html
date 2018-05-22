@@ -49,7 +49,7 @@
     <article>
         <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
           <h1 id="kss-scheibo-a-template-for-the-kss-node-styleguide">KSS-Scheibo - a template for the KSS-node styleguide</h1>
-<p><a href="https://npmjs.org/package/kss-scheibo"><img src="https://badge.fury.io/js/kss-scheibo.svg?style=flat" alt="npm version"></a> <a href="https://github.com/scheibome/kss-scheibo/issues"><img src="http://img.shields.io/github/issues/scheibome/kss-scheibo.svg" alt="Issues"></a> <img src="https://img.shields.io/npm/dt/kss-scheibo.svg" alt="npm"></p>
+<p><a href="https://npmjs.org/package/kss-scheibo"><img src="https://badge.fury.io/js/kss-scheibo.svg?style=flat" alt="npm version"></a> <a href="https://github.com/scheibome/kss-scheibo/issues"><img src="https://img.shields.io/github/issues/scheibome/kss-scheibo.svg" alt="Issues"></a> <img src="https://img.shields.io/npm/dt/kss-scheibo.svg" alt="npm"></p>
 <h3 id="install">Install</h3>
 <p><code>npm install kss-scheibo --save-dev</code></p>
 <h3 id="setup">Setup</h3>
@@ -81,12 +81,15 @@ This is possible with <code>&lt;insert-markup&gt;</code>.
 The digits after the <code>-</code> are the specified classes, starting at 0</p>
 <p>Here is an <a href="/section-1.html">example</a>:</p>
 <pre><code>Markup:
- &lt;div class=&quot;{{modifier_class}}&quot;&gt;
-   &lt;insert-markup&gt;1.1&lt;/insert-markup&gt;
-   &lt;insert-markup&gt;1.1-0&lt;/insert-markup&gt;
-   &lt;insert-markup&gt;1.1-1&lt;/insert-markup&gt;
-   &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
- &lt;/div&gt;
+  &lt;div class=&quot;{{modifier_class}}&quot;&gt;
+    &lt;p&gt;This is another section that includes the section with the different modifiers of 1.1.&lt;/p&gt;
+    &lt;insert-markup&gt;1.1&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.1-1&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
+    The Markup is above this line
+  &lt;/div&gt;
 </code></pre>
         </div>
   </article>
