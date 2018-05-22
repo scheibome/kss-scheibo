@@ -17,5 +17,4 @@ rss.xml
 
 /node_modules
 /kss_styleguide/scheibo-template/*.html
-kss-scheibo/
 package-lock.json
