@@ -24,6 +24,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	}
 
 	setupEachSection(styleGuide) {
+
 		styleGuide.sections().forEach(function(section) {
 
 			let markup = section.data.markup;
@@ -44,8 +45,14 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 					// console.log(i, modifier, markupMatch);
 					if (modifier && modifier[2] !== '') {
-						// console.log(markup);
-						console.log(modifier[2]);
+						// console.log(modifier[2]);
+						// console.log(markupItem);
+						// console.log(styleGuide.sections('1.1').modifiers(modifier[2])); // TODO: check if exists
+						// console.log(styleGuide.sections('1.1').modifiers(1).data.name); // TODO: The name
+
+
+						// console.log(styleGuide.sections('1.1').data.markup);
+						// console.log(styleGuide.sections('1.1').meta);
 					}
 
 
