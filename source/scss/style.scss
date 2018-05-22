@@ -19,8 +19,7 @@
 \*------------------------------------*/
 
 @import '_modules/settings',
-        '_modules/mixins',
-        '_modules/normalize';
+        '_modules/mixins';
 
 
 
@@ -53,21 +52,27 @@ Patterns - Example
 .example1 - example1
 .example2 - example2
 
-Markup: <div class="{{modifier_class}}">This is an example.</div>
+Markup: <div class="{{modifier_class}}">This is an example in section 1.0 and can use in all other sections.</div>
 
 Styleguide 1.1
 */
 
 .example {
-  background-color: #fff000;
+  background-color: #DE2439;
+  padding: 1rem;
+  color: white;
 }
 
 .example1 {
-  background-color: #ff0000;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: #F6B10B;
 }
 
 .example2 {
-  background-color: #000fff;
+  padding: 1rem;
+  width: 50%;
+  background-color: #BAD500;
 }
 
 /*
@@ -77,34 +82,17 @@ Patterns - Example 2
 
 Markup:
   <div class="{{modifier_class}}">
-    This is second example with a insert markup
+    <p>This is another section that includes the section with the different modifiers of 1.1.</p>
     <insert-markup>1.1</insert-markup>
-    <insert-markup>1.1-3</insert-markup>
-    <insert-markup>1.1-5</insert-markup>
     <insert-markup>1.1-0</insert-markup>
     <insert-markup>1.1-2</insert-markup>
-    <insert-markup>1.1-4</insert-markup>
     <insert-markup>1.1-1</insert-markup>
-    <insert-markup>1.1-2</insert-markup>
-    <insert-markup>1.1-2</insert-markup>
     <insert-markup>1.1-2</insert-markup>
     The Markup is above this line
   </div>
 
 Styleguide 1.1.1
 */
-
-.example {
-  background-color: #fff000;
-}
-
-.example1 {
-  background-color: #ff0000;
-}
-
-.example2 {
-  background-color: #000fff;
-}
 
 // @import '01_patterns/general';
 

@@ -7,6 +7,6 @@
   "source"       : "source/",
   "destination"  : "docs",
   "homepage"     : "../kss_styleguide/kss-homepage.md",
-  "css": [],
+  "css": ["kss-assets/scss/style.css"],
   "js" : []
 }
