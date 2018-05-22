@@ -4,7 +4,7 @@
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
-  "homepage": "https://github.com/scheibome/kss-scheibo",
+  "homepage": "https://kss-scheibo.scheibitz.com/",
   "author": "Thomas Scheibitz <npm@scheibitz.com> (https://www.scheibitz.com)",
   "scripts": {
     "kss": "kss --config kss-scheibo.json"

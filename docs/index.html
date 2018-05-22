@@ -74,6 +74,18 @@ gulp.task(&#39;kss&#39;, function(cb) {
         cb(err);
     });
 });
+</code></pre><h2 id="modifications">Modifications</h2>
+<p>You can include another section in a section.
+This is possible with <code>&lt;insert-markup&gt;</code>.
+The digits after the <code>-</code> are the specified classes, starting at 0</p>
+<p>Here is an example:</p>
+<pre><code>Markup:
+ &lt;div class=&quot;{{modifier_class}}&quot;&gt;
+   &lt;insert-markup&gt;1.1&lt;/insert-markup&gt;
+   &lt;insert-markup&gt;1.1-0&lt;/insert-markup&gt;
+   &lt;insert-markup&gt;1.1-1&lt;/insert-markup&gt;
+   &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
+ &lt;/div&gt;
 </code></pre>
         </div>
   </article>
@@ -102,8 +114,5 @@ gulp.task(&#39;kss&#39;, function(cb) {
   });
 </script>
 
-
-
-<!-- Automatically built using <a href="https://github.com/kss-node/kss-node">kss-node</a>. -->
 </body>
 </html>
