@@ -36,7 +36,7 @@ gulp.task('kss', function(cb) {
 });
 
 gulp.task('watch', ['kss', 'sass', 'demo-sass'], function() {
-	gulp.watch('kss_styleguide/**/**', ['kss']);
+	gulp.watch(['kss_styleguide/**/**', 'lib/**/**'], ['kss']);
 	gulp.watch('kss_styleguide/scheibo-template/kss-assets/**/*.scss', ['sass']);
 	gulp.watch(settings.source + '/**/*.scss', ['demo-sass', 'kss']);
 });

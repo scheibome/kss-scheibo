@@ -75,7 +75,6 @@
                 {{header}}
             </h{{depth}}>
           </a>
-
           {{#if example}}
             <p class="kss-toolbar">
               {{#unless @root.template.isItem}}
@@ -171,8 +170,10 @@
               {{{example}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
-
             {{#each modifiers}}
+
+              {{{modifierFullscreenButton markup ../referenceURI @key}}}
+
               <div class="kss-modifier__name kss-style">
                 {{name}}
               </div>
