@@ -123,7 +123,8 @@
           {{#if colors}}
             <ul class="kss-colors">
               {{#kssColors colors}}
-                <li>
+                <li class="kss-colors--item" style="background-color: {{color.value}};">
+                    <h1>{{color.value}}</h1>
                   <div class="kss-colors__demo">{{color.character}}</div>
                   <div class="kss-colors__info">
                     <p><strong class="kss-color__name">{{color.name}}</strong>: <code class="kss-colors__char">{{color.character}}</code></p>
