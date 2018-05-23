@@ -12,8 +12,10 @@
   "devDependencies": {
     "csspattern": "git+ssh://git@github.com/scheibome/csspattern.git",
     "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
     "gulp-sass": "^4.0.1",
-    "gulp-uncss": "^1.0.6"
+    "postcss-uncss": "^0.16.1",
+    "uncss": "^0.16.2"
   },
   "keywords": [
     "kss",
