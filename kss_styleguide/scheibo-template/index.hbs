@@ -171,14 +171,16 @@
               <div class="kss-modifier__example-footer"></div>
             </div>
             {{#each modifiers}}
-
-              {{{modifierFullscreenButton name markup ../referenceURI @key}}}
-
-              <div class="kss-modifier__name kss-style">
-                {{name}}
-              </div>
-              <div class="kss-modifier__description kss-style">
-                {{{description}}}
+              <div class="kss-modifier__header">
+                <div>
+                  <div class="kss-modifier__name kss-style">
+                    {{name}}
+                  </div>
+                  <div class="kss-modifier__description kss-style">
+                    {{{description}}}
+                  </div>
+                </div>
+                {{{modifierFullscreenButton name markup ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
                 {{{markup}}}

@@ -207,6 +207,12 @@ a {
     @extend .mb-4;
   }
 
+  &__header {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
+  }
+
   &__default-name,
   &__name {
     @extend .font-bold;
