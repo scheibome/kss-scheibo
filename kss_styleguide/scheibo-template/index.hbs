@@ -106,6 +106,35 @@
             </div>
           {{/if}}
 
+          {{#if icons}}
+            <ul class="kss-icons">
+              {{#kssIcons icons}}
+                <li>
+                  <div class="kss-icons__demo">{{icon.character}}</div>
+                  <div class="kss-icons__info">
+                    <p><strong class="kss-icons__name">{{icon.name}}</strong>: <code class="kss-icons__char">{{icon.character}}</code></p>
+                    <p class="kss-icons__description">{{{icon.desc}}}</p>
+                  </div>
+                </li>
+              {{/kssIcons}}
+            </ul>
+          {{/if}}
+
+          {{#if colors}}
+            <ul class="kss-colors">
+              {{#kssColors colors}}
+                <li class="kss-colors__item">
+                    <div class="kss-colors__colorbox" style="background-color: {{color.value}};"></div>
+                  <div class="kss-colors__info">
+                    <h4 class="kss-colors__value">{{color.value}}</h4>
+                    <div class="kss-colors__variable">{{color.variable}}</div>
+                    {{color.description}}
+                  </div>
+                </li>
+              {{/kssColors}}
+            </ul>
+          {{/if}}
+
           {{#if parameters}}
             <div class="kss-parameters__title">Parameters:</div>
             <ul class="kss-parameters">

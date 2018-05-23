@@ -44,6 +44,8 @@ gulp.task('kss', function(cb) {
 
 ## Modifications
 
+#### Insert section into another
+
 You can include another section in a section.
 This is possible with `<insert-markup>`.
 The digits after the `-` are the specified classes, starting at 0
@@ -61,4 +63,30 @@ Markup:
     <insert-markup>1.1-2</insert-markup>
     The Markup is above this line
   </div>
+```
+
+#### Colors
+
+The markup for the colors is specified as follows:
+
+```
+/*
+Colors
+
+Colors:
+$color-primary  : #FF6400 - This is the primary color
+$cloudburst     : #354052 - Font color
+$dodgerblue     : #2EA2F8
+$crimson        : #ED1C24
+$kellygreen     : #1BB934
+
+Styleguide Colors
+*/
+
+$color-primary: #FF6400;
+$cloudburst: #354052;
+$dodgerblue: #2EA2F8;
+$crimson: #ED1C24;
+$kellygreen: #1BB934;
+
 ```
