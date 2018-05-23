@@ -196,7 +196,7 @@ a {
   &__example {
     @extend .p-3;
     @extend .mb-8;
-    @extend .pb-8;
+    @extend .py-10;
     @extend .border-solid;
     @extend .border-grey-light;
     @extend .border-0;
@@ -218,6 +218,12 @@ a {
     @extend .flex;
     @extend .justify-between;
     @extend .items-center;
+    @extend .opacity-25;
+    transition: opacity 0.5s;
+
+    &:hover {
+      @extend .opacity-100;
+    }
   }
 
   &__default-name,

@@ -1,0 +1,62 @@
+/*
+Input / Label
+
+This is another section that includes the section with the different modifiers of 1.1
+
+.form-field--inner - The label into the input
+
+Markup:
+  <div class="form-field {{modifier_class}}">
+    <label class="form-field__label">Name</label>
+    <insert-markup>1.1</insert-markup>
+  </div>
+
+Styleguide 2.1
+*/
+
+.form-field {
+  $this: &;
+
+  &__label {
+    margin: 0 0 0.5rem 0;
+    display: block;
+
+    #{$this}--inner & {
+      margin: 0;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      pointer-events: none;
+      font-size: 0.8rem;
+      color: $color-primary;
+    }
+  }
+  
+  &--inner {
+    position: relative;
+
+    .form-input {
+      padding-top: 2rem;
+    }
+  }
+}
+
+/*
+Form
+
+Markup:
+  <form action="#" method="get" class="form {{modifier_class}}">
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>1.2-0</insert-markup>
+  </form>
+
+Styleguide 2.2
+*/
+
+.form {
+  background-color: $texas;
+  padding: 2rem;
+  border-radius: 5px;
+}

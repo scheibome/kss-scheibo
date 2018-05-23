@@ -10,7 +10,9 @@
  * within an import directive however should do no harm in most cases.
  */
 
-
+.kss-modifier__example {
+  font-family: arial,sans-serif !important;
+}
 
 
 
@@ -33,16 +35,17 @@
 
 
 /*------------------------------------*\
-  #PATTERNS
+  #BASE
 \*------------------------------------*/
 
 /*
-Patterns
+Base
 
 Styleguide 1.0
 */
 
- @import '01_patterns/example';
+@import '01_base/input',
+        '01_base/button';
 
 
 
@@ -58,7 +61,7 @@ Components
 Styleguide 2.0
 */
 
-// @import '02_components/icons';
+ @import '02_components/form';
 
 
 
