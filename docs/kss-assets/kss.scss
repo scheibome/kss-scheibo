@@ -181,7 +181,8 @@ a {
   }
 
   &__svg {
-    @extend .w-4
+    @extend .w-4;
+    @extend .h-4;
   }
 
   &__icon-fill {
@@ -200,6 +201,12 @@ a {
     @extend .border-grey-light;
     @extend .border-0;
     @extend .border-b-px;
+  }
+
+  &__defaultheader {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
   }
 
   &__heading {

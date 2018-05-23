@@ -105,19 +105,6 @@
             </div>
           {{/if}}
 
-          {{#if icons}}
-            <ul class="kss-icons">
-              {{#kssIcons icons}}
-                <li>
-                  <div class="kss-icons__demo">{{icon.character}}</div>
-                  <div class="kss-icons__info">
-                    <p><strong class="kss-icons__name">{{icon.name}}</strong>: <code class="kss-icons__char">{{icon.character}}</code></p>
-                    <p class="kss-icons__description">{{{icon.desc}}}</p>
-                  </div>
-                </li>
-              {{/kssIcons}}
-            </ul>
-          {{/if}}
 
           {{#if colors}}
             <ul class="kss-colors">
@@ -156,8 +143,11 @@
 
         {{#if example}}
           <div class="kss-modifier__wrapper">
-            <div class="kss-modifier__heading kss-style">
-              Example{{#if modifiers}}s{{/if}}
+            <div class="kss-modifier__defaultheader">
+              <div class="kss-modifier__heading kss-style">
+                Example{{#if modifiers}}s{{/if}}
+              </div>
+              {{{modifierFullscreenButton header markup referenceURI 'default'}}}
             </div>
 
             {{#if modifiers}}
