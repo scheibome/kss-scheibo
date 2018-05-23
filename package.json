@@ -10,6 +10,7 @@
     "kss": "kss --config kss-scheibo.json"
   },
   "devDependencies": {
+    "create-html": "^4.1.0",
     "csspattern": "git+ssh://git@github.com/scheibome/csspattern.git",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",

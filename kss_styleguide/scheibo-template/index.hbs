@@ -75,7 +75,6 @@
                 {{header}}
             </h{{depth}}>
           </a>
-
           {{#if example}}
             <p class="kss-toolbar">
               {{#unless @root.template.isItem}}
@@ -106,19 +105,6 @@
             </div>
           {{/if}}
 
-          {{#if icons}}
-            <ul class="kss-icons">
-              {{#kssIcons icons}}
-                <li>
-                  <div class="kss-icons__demo">{{icon.character}}</div>
-                  <div class="kss-icons__info">
-                    <p><strong class="kss-icons__name">{{icon.name}}</strong>: <code class="kss-icons__char">{{icon.character}}</code></p>
-                    <p class="kss-icons__description">{{{icon.desc}}}</p>
-                  </div>
-                </li>
-              {{/kssIcons}}
-            </ul>
-          {{/if}}
 
           {{#if colors}}
             <ul class="kss-colors">
@@ -157,8 +143,11 @@
 
         {{#if example}}
           <div class="kss-modifier__wrapper">
-            <div class="kss-modifier__heading kss-style">
-              Example{{#if modifiers}}s{{/if}}
+            <div class="kss-modifier__defaultheader">
+              <div class="kss-modifier__heading kss-style">
+                Example{{#if modifiers}}s{{/if}}
+              </div>
+              {{{modifierFullscreenButton header markup referenceURI 'default'}}}
             </div>
 
             {{#if modifiers}}
@@ -171,13 +160,17 @@
               {{{example}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
-
             {{#each modifiers}}
-              <div class="kss-modifier__name kss-style">
-                {{name}}
-              </div>
-              <div class="kss-modifier__description kss-style">
-                {{{description}}}
+              <div class="kss-modifier__header">
+                <div>
+                  <div class="kss-modifier__name kss-style">
+                    {{name}}
+                  </div>
+                  <div class="kss-modifier__description kss-style">
+                    {{{description}}}
+                  </div>
+                </div>
+                {{{modifierFullscreenButton name markup ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
                 {{{markup}}}

@@ -181,7 +181,8 @@ a {
   }
 
   &__svg {
-    @extend .w-4
+    @extend .w-4;
+    @extend .h-4;
   }
 
   &__icon-fill {
@@ -202,9 +203,21 @@ a {
     @extend .border-b-px;
   }
 
+  &__defaultheader {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
+  }
+
   &__heading {
     @extend .font-bold;
     @extend .mb-4;
+  }
+
+  &__header {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
   }
 
   &__default-name,
