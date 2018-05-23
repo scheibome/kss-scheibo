@@ -42,8 +42,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				markupMatch = markup.match(regexModifier);
 
 				// Check isset '<insert-markup>'
-				if(markupMatch) {
-
+				if (markupMatch) {
 					markupMatch.forEach(function(markupItem) {
 						modifier = regexModifierLine.exec(markupItem);
 						modifierMarkup = modifier[1];

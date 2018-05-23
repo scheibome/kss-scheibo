@@ -203,6 +203,12 @@ a {
     @extend .border-b-px;
   }
 
+  &__defaultinsertmarkuptext {
+    @extend .italic;
+    @extend .text-sm;
+    @extend .font-normal;
+  }
+
   &__defaultheader {
     @extend .flex;
     @extend .justify-between;
@@ -232,7 +238,8 @@ a {
     @extend .px-3;
   }
 
-  &__description {
+  &__description,
+  &__insertmarkuptext {
     @extend .px-3;
     @extend .italic;
     @extend .text-sm;

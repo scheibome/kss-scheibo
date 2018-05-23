@@ -144,17 +144,11 @@
         {{#if example}}
           <div class="kss-modifier__wrapper">
             <div class="kss-modifier__defaultheader">
-              <div class="kss-modifier__heading kss-style">
-                Example{{#if modifiers}}s{{/if}}
+              <div class="kss-modifier__defaultinsertmarkuptext">
+                {{modifierInsertCode referenceURI ""}}
               </div>
               {{{modifierFullscreenButton header markup referenceURI 'default'}}}
             </div>
-
-            {{#if modifiers}}
-              <div class="kss-modifier__default-name kss-style">
-                Default styling
-              </div>
-            {{/if}}
 
             <div class="kss-modifier__example" style="font-family: initial; font-size: initial; font-weight: initial; color: initial;">
               {{{example}}}
@@ -168,6 +162,9 @@
                   </div>
                   <div class="kss-modifier__description kss-style">
                     {{{description}}}
+                  </div>
+                  <div class="kss-modifier__insertmarkuptext">
+                    {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
                 {{{modifierFullscreenButton name markup ../referenceURI @key}}}
