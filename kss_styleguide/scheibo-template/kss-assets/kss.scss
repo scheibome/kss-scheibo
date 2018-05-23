@@ -287,3 +287,43 @@ a {
     @extend .h-px;
   }
 }
+
+.kss-colors {
+  @extend .flex;
+  @extend .flex-wrap;
+  @extend .justify-between;
+  @extend .list-reset;
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
+
+  &__item {
+    width: calc(#{map-get($widths, "1\\/2")} - 1rem);
+    @extend .mb-8;
+    @extend .px-2;
+
+    @include simplebreakpoint('desktop') {
+      width: calc(#{map-get($widths, "1\\/4")} - 1rem);
+    }
+  }
+
+  &__colorbox {
+    @extend .w-full;
+    height: 100px;
+
+    @include simplebreakpoint('desktop') {
+      height: 150px
+    }
+  }
+
+  &__value {
+    @extend .mb-2;
+  }
+
+  &__variable {
+    @extend .italic;
+    @extend .mb-2;
+  }
+}

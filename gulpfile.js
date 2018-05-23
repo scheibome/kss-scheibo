@@ -35,8 +35,8 @@ gulp.task('kss', function(cb) {
 	});
 });
 
-gulp.task('watch', ['sass', 'demo-sass', 'kss'], function() {
+gulp.task('watch', ['kss', 'sass', 'demo-sass'], function() {
+	gulp.watch('kss_styleguide/**/**', ['kss']);
 	gulp.watch('kss_styleguide/scheibo-template/kss-assets/**/*.scss', ['sass']);
 	gulp.watch(settings.source + '/**/*.scss', ['demo-sass']);
-	gulp.watch('kss-scheibo/**/**', ['kss']);
 });
