@@ -1,0 +1,53 @@
+/*
+Patterns - Example
+
+.example - example
+.example1 - example1
+.example2 - example2
+
+Markup: <div class="{{modifier_class}}">This is an example in section 1.0 and can be used in all other sections.</div>
+
+Styleguide 1.1
+*/
+
+.example {
+  background-color: $alizarin;
+  padding: 1rem;
+  color: white;
+}
+
+.example1 {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: $selectiveyellow;
+}
+
+.example2 {
+  padding: 1rem;
+  width: 50%;
+  background-color: $springbud;
+}
+
+/*
+Patterns - Example 2
+
+.box - example
+
+Markup:
+  <div class="{{modifier_class}}">
+    <p>This is another section that includes the section with the different modifiers of 1.1.</p>
+    <insert-markup>1.1</insert-markup>
+    <insert-markup>1.1-0</insert-markup>
+    <insert-markup>1.1-2</insert-markup>
+    <insert-markup>1.1-1</insert-markup>
+    <insert-markup>1.1-2</insert-markup>
+    The Markup is above this line
+  </div>
+
+Styleguide 1.1.1
+*/
+
+.box {
+  background-color: $texas;
+  padding: 2rem;
+}
