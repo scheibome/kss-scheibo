@@ -42,6 +42,11 @@
             <span class="kss-nav__ref">3</span><span class="kss-nav__name">Layouts</span>
           </a>
         </li>
+        <li class="kss-nav__menu-item">
+          <a class="kss-nav__menu-link " href="section-colors.html">
+            <span class="kss-nav__ref">4</span><span class="kss-nav__name">Colors</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -76,6 +81,7 @@ gulp.task(&#39;kss&#39;, function(cb) {
     });
 });
 </code></pre><h2 id="modifications">Modifications</h2>
+<h4 id="insert-section-into-another">Insert section into another</h4>
 <p>You can include another section in a section.
 This is possible with <code>&lt;insert-markup&gt;</code>.
 The digits after the <code>-</code> are the specified classes, starting at 0</p>
@@ -90,6 +96,27 @@ The digits after the <code>-</code> are the specified classes, starting at 0</p>
     &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
     The Markup is above this line
   &lt;/div&gt;
+</code></pre><h4 id="colors">Colors</h4>
+<p>The markup for the colors is specified as follows:</p>
+<pre><code>/*
+Colors
+
+Colors:
+$color-primary  : #FF6400 - This is the primary color
+$cloudburst     : #354052 - Font color
+$dodgerblue     : #2EA2F8
+$crimson        : #ED1C24
+$kellygreen     : #1BB934
+
+Styleguide Colors
+*/
+
+$color-primary: #FF6400;
+$cloudburst: #354052;
+$dodgerblue: #2EA2F8;
+$crimson: #ED1C24;
+$kellygreen: #1BB934;
+
 </code></pre>
         </div>
   </article>

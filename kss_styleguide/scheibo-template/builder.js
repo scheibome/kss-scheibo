@@ -9,7 +9,6 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 	prepare(styleGuide) {
 		this.setupEachSection(styleGuide);
-		// this.setupEachModifier(styleGuide);
 		return super.prepare(styleGuide);
 	}
 
