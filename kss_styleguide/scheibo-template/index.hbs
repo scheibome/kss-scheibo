@@ -36,10 +36,10 @@
               <ul class="kss-nav__menu-child">
               {{#each children}}
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                  <span class="kss-nav__menu-link" data-singlesectiontrigger="kssref-{{referenceURI}}">
                     <span class="kss-nav__ref {{#if isGrandChild}}kss-nav__ref-child{{/if}}">{{referenceNumber}}</span
                     ><span class="kss-nav__name">{{header}}</span>
-                  </a>
+                  </span>
                 </li>
               {{/each}}
               </ul>
@@ -75,7 +75,6 @@
                 {{header}}
             </h{{depth}}>
           </a>
-
           {{#if example}}
             <p class="kss-toolbar">
               {{#unless @root.template.isItem}}
@@ -106,19 +105,6 @@
             </div>
           {{/if}}
 
-          {{#if icons}}
-            <ul class="kss-icons">
-              {{#kssIcons icons}}
-                <li>
-                  <div class="kss-icons__demo">{{icon.character}}</div>
-                  <div class="kss-icons__info">
-                    <p><strong class="kss-icons__name">{{icon.name}}</strong>: <code class="kss-icons__char">{{icon.character}}</code></p>
-                    <p class="kss-icons__description">{{{icon.desc}}}</p>
-                  </div>
-                </li>
-              {{/kssIcons}}
-            </ul>
-          {{/if}}
 
           {{#if colors}}
             <ul class="kss-colors">
@@ -157,27 +143,31 @@
 
         {{#if example}}
           <div class="kss-modifier__wrapper">
-            <div class="kss-modifier__heading kss-style">
-              Example{{#if modifiers}}s{{/if}}
-            </div>
-
-            {{#if modifiers}}
-              <div class="kss-modifier__default-name kss-style">
-                Default styling
+            <div class="kss-modifier__defaultheader kss-style">
+              <div class="kss-modifier__defaultinsertmarkuptext">
+                {{modifierInsertCode referenceURI ""}}
               </div>
-            {{/if}}
+              {{{modifierFullscreenButton header markup referenceURI 'default'}}}
+            </div>
 
             <div class="kss-modifier__example">
               {{{example}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
-
             {{#each modifiers}}
-              <div class="kss-modifier__name kss-style">
-                {{name}}
-              </div>
-              <div class="kss-modifier__description kss-style">
-                {{{description}}}
+              <div class="kss-modifier__header">
+                <div>
+                  <div class="kss-modifier__name kss-style">
+                    {{name}}
+                  </div>
+                  <div class="kss-modifier__description kss-style">
+                    {{{description}}}
+                  </div>
+                  <div class="kss-modifier__insertmarkuptext kss-style">
+                    {{modifierInsertCode ../referenceURI @key}}
+                  </div>
+                </div>
+                {{{modifierFullscreenButton name markup ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
                 {{{markup}}}
@@ -217,10 +207,12 @@
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-singlesection.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/prismjs.js"></script>
 <script>
+  var kssSingleSection = new KssSingleSection();
   var kssFullScreen = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',

@@ -1,0 +1,43 @@
+/*
+Button - Submit
+
+.btn--cta - a call-to-action button
+.btn--disable - a disable button
+
+Markup: <button class="btn {{modifier_class}}">Send</button>
+
+Styleguide 1.2
+*/
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: background-color 0.3s;
+  background-color: $gainsboro;
+  border: 1px darken($gainsboro, 10%) solid;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($gainsboro, 10%);
+  }
+
+  &--cta {
+    background-color: $color-primary;
+    border-color: darken($color-primary, 10%);
+    color: white;
+
+    &:hover {
+      background-color: darken($color-primary, 20%);
+    }
+  }
+
+  &--disable {
+    background-color: white;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

@@ -24,12 +24,15 @@ a {
   }
 }
 
+.kss-style {
+  @extend .font-arial;
+  @extend .text-grey-darkest;
+}
+
 .kss-container {
   @extend .my-6;
   @extend .mx-auto;
   @extend .px-4;
-  @extend .font-arial;
-  @extend .text-grey-darkest;
 
   @include simplebreakpoint('md') {
     @include container;
@@ -73,6 +76,7 @@ a {
     @extend .flex;
     @extend .flex-row-reverse;
     @extend .justify-between;
+    @extend .cursor-pointer;
 
     &:hover {
       @extend .bg-grey-light;
@@ -181,7 +185,8 @@ a {
   }
 
   &__svg {
-    @extend .w-4
+    @extend .w-4;
+    @extend .h-4;
   }
 
   &__icon-fill {
@@ -195,16 +200,40 @@ a {
   &__example {
     @extend .p-3;
     @extend .mb-8;
-    @extend .pb-8;
+    @extend .py-10;
     @extend .border-solid;
     @extend .border-grey-light;
     @extend .border-0;
     @extend .border-b-px;
   }
 
+  &__defaultinsertmarkuptext {
+    @extend .italic;
+    @extend .text-sm;
+    @extend .font-normal;
+  }
+
+  &__defaultheader {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
+  }
+
   &__heading {
     @extend .font-bold;
     @extend .mb-4;
+  }
+
+  &__header {
+    @extend .flex;
+    @extend .justify-between;
+    @extend .items-center;
+    @extend .opacity-25;
+    transition: opacity 0.5s;
+
+    &:hover {
+      @extend .opacity-100;
+    }
   }
 
   &__default-name,
@@ -213,7 +242,8 @@ a {
     @extend .px-3;
   }
 
-  &__description {
+  &__description,
+  &__insertmarkuptext {
     @extend .px-3;
     @extend .italic;
     @extend .text-sm;
@@ -222,7 +252,12 @@ a {
 
 .kss-section {
   @extend .mb-14;
+
+  &--hidden {
+    @extend .hidden;
+  }
 }
+
 
 .kss-fullscreen-mode {
   .kss-header,

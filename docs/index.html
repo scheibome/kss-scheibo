@@ -29,7 +29,7 @@
         </li>
         <li class="kss-nav__menu-item">
           <a class="kss-nav__menu-link " href="section-1.html">
-            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Patterns</span>
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item">
@@ -54,24 +54,25 @@
     <article>
         <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
           <h1 id="kss-scheibo-a-template-for-the-kss-node-styleguide">KSS-Scheibo - a template for the KSS-node styleguide</h1>
-<p><a href="https://npmjs.org/package/kss-scheibo"><img src="https://badge.fury.io/js/kss-scheibo.svg?style=flat" alt="npm version"></a> <a href="https://github.com/scheibome/kss-scheibo/issues"><img src="https://img.shields.io/github/issues/scheibome/kss-scheibo.svg" alt="Issues"></a> <img src="https://img.shields.io/npm/dt/kss-scheibo.svg" alt="npm"></p>
-<h3 id="install">Install</h3>
+<p><a href="https://npmjs.org/package/kss-scheibo"><img src="https://badge.fury.io/js/kss-scheibo.svg?style=flat" alt="npm version"></a> <a href="https://github.com/scheibome/kss-scheibo/issues"><img src="http://img.shields.io/github/issues/scheibome/kss-scheibo.svg" alt="Issues"></a> <img src="https://img.shields.io/npm/dt/kss-scheibo.svg" alt="npm"></p>
+<h2 id="install">Install</h2>
 <p><code>npm install kss-scheibo --save-dev</code></p>
-<h3 id="setup">Setup</h3>
+<h2 id="setup">Setup</h2>
 <p>Create a file name <code>kss-scheibo.json</code> in your package.json root with the following lines.
 For all configurations see <a href="https://github.com/kss-node/kss-node#using-the-command-line-tool">kss-node documentation</a></p>
 <pre><code>{
   &quot;title&quot;        : &quot;the name of your styleguide&quot;,
   &quot;builder&quot;      : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
+  &quot;custom&quot;       : [&quot;Colors&quot;],
   &quot;source&quot;       : &quot;assets/&quot;,
   &quot;destination&quot;  : &quot;../styleguide/&quot;,
   &quot;css&quot;          : [&#39;URL_of_a_CSS_file_to_include_in_the_style_guide.css&#39;]
 }
 </code></pre><p>Create a <code>kss-homepage.md</code> and add your styles like <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation">style-documentation</a> in your source folder.</p>
-<h3 id="generate">Generate</h3>
+<h2 id="generate">Generate</h2>
 <p>Generate your styleguide with the following line:</p>
 <p><code>node node_modules/kss/bin/kss --config kss-scheibo.json</code></p>
-<h3 id="using-kss-scheibo-with-gulp">Using kss-scheibo with Gulp</h3>
+<h2 id="using-kss-scheibo-with-gulp">Using kss-scheibo with Gulp</h2>
 <pre><code>var gulp = require(&#39;gulp&#39;);
 var exec = require(&#39;child_process&#39;).exec;
 
@@ -85,19 +86,20 @@ gulp.task(&#39;kss&#39;, function(cb) {
 <p>You can include another section in a section.
 This is possible with <code>&lt;insert-markup&gt;</code>.
 The digits after the <code>-</code> are the specified classes, starting at 0</p>
-<p>Here is an <a href="/section-1.html">example</a>:</p>
+<p>Here is an <a href="https://kss-scheibo.scheibitz.com/section-2.html#kssref-2-2">example</a>:</p>
 <pre><code>Markup:
-  &lt;div class=&quot;{{modifier_class}}&quot;&gt;
-    &lt;p&gt;This is another section that includes the section with the different modifiers of 1.1.&lt;/p&gt;
-    &lt;insert-markup&gt;1.1&lt;/insert-markup&gt;
-    &lt;insert-markup&gt;1.1-0&lt;/insert-markup&gt;
-    &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
-    &lt;insert-markup&gt;1.1-1&lt;/insert-markup&gt;
-    &lt;insert-markup&gt;1.1-2&lt;/insert-markup&gt;
-    The Markup is above this line
-  &lt;/div&gt;
+  &lt;form action=&quot;#&quot; method=&quot;get&quot; class=&quot;form {{modifier_class}}&quot;&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.2-0&lt;/insert-markup&gt;
+  &lt;/form&gt;
 </code></pre><h4 id="colors">Colors</h4>
-<p>The markup for the colors is specified as follows:</p>
+<p>add the following config in your <code>kss-scheibo.json</code></p>
+<pre><code>{
+  &quot;custom&quot; : [&quot;Colors&quot;]
+}
+</code></pre><p>The markup for the colors is specified as follows:</p>
 <pre><code>/*
 Colors
 
@@ -110,13 +112,6 @@ $kellygreen     : #1BB934
 
 Styleguide Colors
 */
-
-$color-primary: #FF6400;
-$cloudburst: #354052;
-$dodgerblue: #2EA2F8;
-$crimson: #ED1C24;
-$kellygreen: #1BB934;
-
 </code></pre>
         </div>
   </article>
@@ -127,10 +122,12 @@ $kellygreen: #1BB934;
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-singlesection.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/prismjs.js"></script>
 <script>
+  var kssSingleSection = new KssSingleSection();
   var kssFullScreen = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',

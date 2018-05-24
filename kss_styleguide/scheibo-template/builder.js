@@ -6,10 +6,14 @@ const regexModifier = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/g
 const regexModifierLine = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/m;
 
 class KssBuilderScheibo extends KssBuilderHandlebars {
-
 	prepare(styleGuide) {
 		this.setupEachSection(styleGuide);
-		return super.prepare(styleGuide);
+		return super.prepare(styleGuide).then(styleGuide => {
+			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
+			require('../../lib/modules/modifierFullscreen')(this.Handlebars);
+			require('../../lib/modules/colors')(this.Handlebars);
+			return styleGuide;
+		});
 	}
 
 	modifyMarkup(markupid, replacestr, markup) {
@@ -42,8 +46,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				markupMatch = markup.match(regexModifier);
 
 				// Check isset '<insert-markup>'
-				if(markupMatch) {
-
+				if (markupMatch) {
 					markupMatch.forEach(function(markupItem) {
 						modifier = regexModifierLine.exec(markupItem);
 						modifierMarkup = modifier[1];

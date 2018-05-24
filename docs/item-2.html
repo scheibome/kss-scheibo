@@ -29,13 +29,27 @@
         </li>
         <li class="kss-nav__menu-item">
           <a class="kss-nav__menu-link " href="section-1.html">
-            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Patterns</span>
+            <span class="kss-nav__ref">1</span><span class="kss-nav__name">Base</span>
           </a>
         </li>
         <li class="kss-nav__menu-item">
           <a class="kss-nav__menu-link kss-nav__menu-link--active" href="section-2.html">
             <span class="kss-nav__ref">2</span><span class="kss-nav__name">Components</span>
           </a>
+              <ul class="kss-nav__menu-child">
+                <li class="kss-nav__menu-item">
+                  <span class="kss-nav__menu-link" data-singlesectiontrigger="kssref-2-1">
+                    <span class="kss-nav__ref ">2.1</span
+                    ><span class="kss-nav__name">Input / Label</span>
+                  </span>
+                </li>
+                <li class="kss-nav__menu-item">
+                  <span class="kss-nav__menu-link" data-singlesectiontrigger="kssref-2-2">
+                    <span class="kss-nav__ref ">2.2</span
+                    ><span class="kss-nav__name">Form</span>
+                  </span>
+                </li>
+              </ul>
         </li>
         <li class="kss-nav__menu-item">
           <a class="kss-nav__menu-link " href="section-3.html">
@@ -65,12 +79,11 @@
 
 
 
-
         </div>
 
 
           <div class="kss-source kss-style">
-            Source: <code>scss/style.scss</code>, line 104
+            Source: <code>scss/style.scss</code>, line 61
           </div>
 
       </div>
@@ -82,10 +95,12 @@
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-singlesection.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/prismjs.js"></script>
 <script>
+  var kssSingleSection = new KssSingleSection();
   var kssFullScreen = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',
