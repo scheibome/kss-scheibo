@@ -4,6 +4,9 @@
 	const sectionclasshidden = 'kss-section--hidden';
 
 	let KssSingleSection = function() {
+		if (window.location.hash) {
+			this.setFocus(window.location.hash.substr(1));
+		}
 		this.init();
 	};
 

@@ -51,19 +51,16 @@ You can include another section in a section.
 This is possible with ``<insert-markup>``.
 The digits after the ``-`` are the specified classes, starting at 0
 
-Here is an [example](/section-1.html):
+Here is an [example](https://kss-scheibo.scheibitz.com/section-2.html#kssref-2-2):
 
 ```
 Markup:
-  <div class="{{modifier_class}}">
-    <p>This is another section that includes the section with the different modifiers of 1.1.</p>
-    <insert-markup>1.1</insert-markup>
-    <insert-markup>1.1-0</insert-markup>
-    <insert-markup>1.1-2</insert-markup>
-    <insert-markup>1.1-1</insert-markup>
-    <insert-markup>1.1-2</insert-markup>
-    The Markup is above this line
-  </div>
+  <form action="#" method="get" class="form {{modifier_class}}">
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>2.1-0</insert-markup>
+    <insert-markup>1.2-0</insert-markup>
+  </form>
 ```
 
 #### Colors
