@@ -24,12 +24,15 @@ a {
   }
 }
 
+.kss-style {
+  @extend .font-arial;
+  @extend .text-grey-darkest;
+}
+
 .kss-container {
   @extend .my-6;
   @extend .mx-auto;
   @extend .px-4;
-  @extend .font-arial;
-  @extend .text-grey-darkest;
 
   @include simplebreakpoint('md') {
     @include container;

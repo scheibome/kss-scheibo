@@ -10,11 +10,14 @@
  * within an import directive however should do no harm in most cases.
  */
 
-.kss-modifier__example {
-  font-family: arial,sans-serif !important;
+//.kss-modifier__example {
+//  font-family: arial,sans-serif !important;
+//}
+
+
+body {
+  font-family: arial, sans-serif;
 }
-
-
 
 /*------------------------------------*\
   #MODULES

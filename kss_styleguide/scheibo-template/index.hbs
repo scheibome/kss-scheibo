@@ -143,14 +143,14 @@
 
         {{#if example}}
           <div class="kss-modifier__wrapper">
-            <div class="kss-modifier__defaultheader">
+            <div class="kss-modifier__defaultheader kss-style">
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
               {{{modifierFullscreenButton header markup referenceURI 'default'}}}
             </div>
 
-            <div class="kss-modifier__example" style="font-family: initial; font-size: initial; font-weight: initial; color: initial;">
+            <div class="kss-modifier__example">
               {{{example}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
@@ -163,13 +163,13 @@
                   <div class="kss-modifier__description kss-style">
                     {{{description}}}
                   </div>
-                  <div class="kss-modifier__insertmarkuptext">
+                  <div class="kss-modifier__insertmarkuptext kss-style">
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
                 {{{modifierFullscreenButton name markup ../referenceURI @key}}}
               </div>
-              <div class="kss-modifier__example" style="font-family: initial; font-size: initial; font-weight: initial; color: initial;">
+              <div class="kss-modifier__example">
                 {{{markup}}}
                 <div class="kss-modifier__example-footer"></div>
               </div>
