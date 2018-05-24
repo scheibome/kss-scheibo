@@ -3,7 +3,6 @@
   "mask"         : "*.scss",
   "placeholder"  : "[modifier]",
   "builder"      : "kss_styleguide/scheibo-template/",
-  "extend"       : "lib/modules",
   "source"       : "source/",
   "destination"  : "docs",
   "homepage"     : "../kss_styleguide/kss-homepage.md",
