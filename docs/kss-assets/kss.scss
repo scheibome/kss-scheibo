@@ -76,6 +76,7 @@ a {
     @extend .flex;
     @extend .flex-row-reverse;
     @extend .justify-between;
+    @extend .cursor-pointer;
 
     &:hover {
       @extend .bg-grey-light;
@@ -251,7 +252,12 @@ a {
 
 .kss-section {
   @extend .mb-14;
+
+  &--hidden {
+    @extend .hidden;
+  }
 }
+
 
 .kss-fullscreen-mode {
   .kss-header,

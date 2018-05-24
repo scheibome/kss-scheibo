@@ -38,16 +38,16 @@
           </a>
               <ul class="kss-nav__menu-child">
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-2.html#kssref-2-1">
+                  <span class="kss-nav__menu-link" data-singlesectiontrigger="kssref-2-1">
                     <span class="kss-nav__ref ">2.1</span
                     ><span class="kss-nav__name">Input / Label</span>
-                  </a>
+                  </span>
                 </li>
                 <li class="kss-nav__menu-item">
-                  <a class="kss-nav__menu-link" href="section-2.html#kssref-2-2">
+                  <span class="kss-nav__menu-link" data-singlesectiontrigger="kssref-2-2">
                     <span class="kss-nav__ref ">2.2</span
                     ><span class="kss-nav__name">Form</span>
-                  </a>
+                  </span>
                 </li>
               </ul>
         </li>
@@ -272,10 +272,12 @@
 <!-- SCRIPTS -->
 <script src="kss-assets/kss.js"></script>
 <script src="kss-assets/kss-fullscreen.js"></script>
+<script src="kss-assets/kss-singlesection.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/prismjs.js"></script>
 <script>
+  var kssSingleSection = new KssSingleSection();
   var kssFullScreen = new KssFullScreen({
     idPrefix: 'kss-fullscreen-',
     bodyClass: 'kss-fullscreen-mode',

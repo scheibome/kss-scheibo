@@ -13,7 +13,7 @@ gulp.task('sass', function() {
 	let plugins = [
 		uncss({
 			html: ['docs/**/*.html'],
-			ignore: ['.kss-guides-mode .kss-modifier__example']
+			ignore: ['.kss-guides-mode .kss-modifier__example', '.kss-section--hidden']
 		}),
 	];
 
