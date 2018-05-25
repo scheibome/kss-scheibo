@@ -1,6 +1,10 @@
 # KSS-Scheibo - a template for the KSS-node styleguide
 
-[![npm version](https://badge.fury.io/js/kss-scheibo.svg?style=flat)](https://npmjs.org/package/kss-scheibo) [![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg)
+[![npm version](https://badge.fury.io/js/kss-scheibo.svg?style=flat)](https://npmjs.org/package/kss-scheibo) 
+![npm](https://img.shields.io/npm/v/kss-scheibo.svg)
+ [![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg) 
+![npm](https://img.shields.io/npm/l/kss-scheibo.svg)
+
 
 ## Install
 

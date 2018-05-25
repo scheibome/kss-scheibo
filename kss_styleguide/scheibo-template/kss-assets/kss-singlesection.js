@@ -27,8 +27,20 @@
 				section.classList.add(sectionclasshidden);
 			});
 			el.classList.remove(sectionclasshidden);
+			this.pushUrl(id);
 		}
 		return true;
+	};
+
+	KssSingleSection.prototype.pushUrl = function(id) {
+		if (typeof (history.pushState) !== 'undefined') {
+			let obj = {
+				Url: '#' + id
+			};
+			history.pushState(null, null, obj.Url);
+		} else {
+			alert('Browser does not support HTML5.');
+		}
 	};
 
 	window.KssSingleSection = KssSingleSection;
