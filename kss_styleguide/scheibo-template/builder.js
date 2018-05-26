@@ -11,35 +11,14 @@ const regexModifierLine = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-marku
 
 class KssBuilderScheibo extends KssBuilderHandlebars {
 	prepare(styleGuide) {
-		this.setupEachSection(styleGuide);
+		// this.setupEachSection(styleGuide);
 		return super.prepare(styleGuide).then(styleGuide => {
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars);
+			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
 			require('../../lib/modules/colors')(this.Handlebars);
 			return styleGuide;
 		});
-	}
-
-	returnMarkupFromFile(section) {
-		let workingDirectory = process.cwd();
-		let filePath = section.data.markup;
-
-		recursive(workingDirectory, ['.git', 'node_modules', '.idea'], function (err, files) {
-			files.forEach(function(findUrl) {
-				if (findUrl.indexOf(path.normalize(filePath)) > -1) {
-					let data = fs.readFileSync(findUrl).toString();
-					// return global_data;
-
-					returnRecursive(data);
-				}
-			});
-		});
-
-
-		function returnRecursive(data) {
-			return data;
-			// console.log(data);
-		}
 	}
 
 	modifyMarkup(markupid, replacestr, markup) {
@@ -70,7 +49,6 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			// Check isset markup
 			if (markup) {
 				if (markup.search('^[^\n]+\.(html)$') > -1) {
-					// that.returnMarkupFromFile(section);
 					console.log(that.returnMarkupFromFile(section));
 					// console.log(markup);
 				}
