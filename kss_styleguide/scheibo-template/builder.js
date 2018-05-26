@@ -2,6 +2,10 @@
 'use strict';
 
 let KssBuilderHandlebars = require('kss/builder/handlebars');
+const fs = require('fs');
+const path = require('path');
+const recursive = require('recursive-readdir');
+
 const regexModifier = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/gm;
 const regexModifierLine = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/m;
 
@@ -14,6 +18,28 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/colors')(this.Handlebars);
 			return styleGuide;
 		});
+	}
+
+	returnMarkupFromFile(section) {
+		let workingDirectory = process.cwd();
+		let filePath = section.data.markup;
+
+		recursive(workingDirectory, ['.git', 'node_modules', '.idea'], function (err, files) {
+			files.forEach(function(findUrl) {
+				if (findUrl.indexOf(path.normalize(filePath)) > -1) {
+					let data = fs.readFileSync(findUrl).toString();
+					// return global_data;
+
+					returnRecursive(data);
+				}
+			});
+		});
+
+
+		function returnRecursive(data) {
+			return data;
+			// console.log(data);
+		}
 	}
 
 	modifyMarkup(markupid, replacestr, markup) {
@@ -42,7 +68,14 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			markup = section.data.markup;
 
 			// Check isset markup
-			if(markup) {
+			if (markup) {
+				if (markup.search('^[^\n]+\.(html)$') > -1) {
+					// that.returnMarkupFromFile(section);
+					console.log(that.returnMarkupFromFile(section));
+					// console.log(markup);
+				}
+
+
 				markupMatch = markup.match(regexModifier);
 
 				// Check isset '<insert-markup>'
