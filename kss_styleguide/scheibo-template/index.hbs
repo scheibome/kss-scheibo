@@ -147,7 +147,7 @@
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
-              {{{modifierFullscreenButton header markup referenceURI 'default'}}}
+              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide) referenceURI 'default'}}}
             </div>
 
             <div class="kss-modifier__example">
@@ -167,7 +167,7 @@
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
-                {{{modifierFullscreenButton name markup ../referenceURI @key}}}
+                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide) ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
                 {{{modifierInsertSection markup ../sections ../../styleGuide}}}
