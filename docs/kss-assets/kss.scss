@@ -1,6 +1,6 @@
-@import '../../../node_modules/csspattern/lib/settings',
-        '../../../node_modules/csspattern/lib/mixins',
-        '../../../node_modules/csspattern/lib/objects';
+@import '../../../node_modules/css-scheibo/lib/settings',
+        '../../../node_modules/css-scheibo/lib/mixins',
+        '../../../node_modules/css-scheibo/lib/objects';
 
 a {
   @extend .text-current;

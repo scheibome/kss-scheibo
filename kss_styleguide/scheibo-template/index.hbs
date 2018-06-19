@@ -71,7 +71,7 @@
 
         <div class="kss-style">
           <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-            <h{{depth}} class="kss-title kss-title--level-{{depth}}">
+            <h{{depth}} class="kss-title kss-title--level-{{depth}} kss-style">
                 {{header}}
             </h{{depth}}>
           </a>
@@ -151,7 +151,7 @@
             </div>
 
             <div class="kss-modifier__example">
-              {{{example}}}
+              {{{modifierInsertSection example ../sections ../styleGuide}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
             {{#each modifiers}}
@@ -170,7 +170,7 @@
                 {{{modifierFullscreenButton name markup ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
-                {{{markup}}}
+                {{{modifierInsertSection markup ../sections ../../styleGuide}}}
                 <div class="kss-modifier__example-footer"></div>
               </div>
             {{/each}}

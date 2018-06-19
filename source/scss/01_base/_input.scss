@@ -3,9 +3,9 @@ Input - Text
 
 This is the basic form field for any single input. It sets a few layout options by default (margin) and styles any labels within.
 
-.form-input--error - This is a alert style
-.form-input--success - This is a success style
-.form-input--small - This is a large style
+form-input--error - This is a alert style
+form-input--success - This is a success style
+form-input--small - This is a large style
 
 Markup: <input class="form-input {{modifier_class}}" type="text" placeholder="Text Input" />
 
