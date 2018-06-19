@@ -2,15 +2,20 @@
 'use strict';
 
 let KssBuilderHandlebars = require('kss/builder/handlebars');
+const fs = require('fs');
+const path = require('path');
+const recursive = require('recursive-readdir');
+
 const regexModifier = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/gm;
 const regexModifierLine = /<insert-markup>(([0-9\.]*)\-?([0-9]*))<\/insert-markup>/m;
 
 class KssBuilderScheibo extends KssBuilderHandlebars {
 	prepare(styleGuide) {
-		this.setupEachSection(styleGuide);
+		// this.setupEachSection(styleGuide);
 		return super.prepare(styleGuide).then(styleGuide => {
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars);
+			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
 			require('../../lib/modules/colors')(this.Handlebars);
 			return styleGuide;
 		});
@@ -42,7 +47,13 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			markup = section.data.markup;
 
 			// Check isset markup
-			if(markup) {
+			if (markup) {
+				if (markup.search('^[^\n]+\.(html)$') > -1) {
+					console.log(that.returnMarkupFromFile(section));
+					// console.log(markup);
+				}
+
+
 				markupMatch = markup.match(regexModifier);
 
 				// Check isset '<insert-markup>'

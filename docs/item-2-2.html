@@ -57,7 +57,7 @@
 
         <div class="kss-style">
           <a class="kss-title__permalink" href="#kssref-2-2">
-            <h2 class="kss-title kss-title--level-2">
+            <h2 class="kss-title kss-title--level-2 kss-style">
                 Form
             </h2>
           </a>
@@ -86,44 +86,42 @@
             </div>
 
             <div class="kss-modifier__example">
-                <form action="#" method="get" class="form ">
-      <div class="form-field form-field--inner">
+              <form action="#" method="get" class="form ">
+	  <div class="form-field {{modifier_class}}">
     <label class="form-field__label">Name</label>
-    <input class="form-input " type="text" placeholder="Text Input" />
+    <input class="form-input {{modifier_class}}" type="text" placeholder="Text Input" />
   </div>
       <div class="form-field form-field--inner">
     <label class="form-field__label">Name</label>
-    <input class="form-input " type="text" placeholder="Text Input" />
+    <input class="form-input {{modifier_class}}" type="text" placeholder="Text Input" />
   </div>
       <div class="form-field form-field--inner">
     <label class="form-field__label">Name</label>
-    <input class="form-input " type="text" placeholder="Text Input" />
+    <input class="form-input {{modifier_class}}" type="text" placeholder="Text Input" />
+  </div>
+      <div class="form-field form-field--inner">
+    <label class="form-field__label">Name</label>
+    <input class="form-input {{modifier_class}}" type="text" placeholder="Text Input" />
   </div>
     <button class="btn btn--cta">Send</button>
-  </form>
+</form>
+
               <div class="kss-modifier__example-footer"></div>
             </div>
           </div>
 
             <details class="kss-markup kss-style">
               <summary>
-                  Markup
+                  Markup: <code>templates/02_components/form.html</code>
               </summary>
-              <pre><code class="lang-markup">  &lt;form action&#x3D;&quot;#&quot; method&#x3D;&quot;get&quot; class&#x3D;&quot;form &quot;&gt;
-      &lt;div class&#x3D;&quot;form-field form-field--inner&quot;&gt;
-    &lt;label class&#x3D;&quot;form-field__label&quot;&gt;Name&lt;/label&gt;
-    &lt;input class&#x3D;&quot;form-input &quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Text Input&quot; /&gt;
-  &lt;/div&gt;
-      &lt;div class&#x3D;&quot;form-field form-field--inner&quot;&gt;
-    &lt;label class&#x3D;&quot;form-field__label&quot;&gt;Name&lt;/label&gt;
-    &lt;input class&#x3D;&quot;form-input &quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Text Input&quot; /&gt;
-  &lt;/div&gt;
-      &lt;div class&#x3D;&quot;form-field form-field--inner&quot;&gt;
-    &lt;label class&#x3D;&quot;form-field__label&quot;&gt;Name&lt;/label&gt;
-    &lt;input class&#x3D;&quot;form-input &quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Text Input&quot; /&gt;
-  &lt;/div&gt;
-    &lt;button class&#x3D;&quot;btn btn--cta&quot;&gt;Send&lt;/button&gt;
-  &lt;/form&gt;</code></pre>
+              <pre><code class="lang-markup">&lt;form action&#x3D;&quot;#&quot; method&#x3D;&quot;get&quot; class&#x3D;&quot;form &quot;&gt;
+	&lt;insert-markup&gt;2.1&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;2.1-0&lt;/insert-markup&gt;
+    &lt;insert-markup&gt;1.2-0&lt;/insert-markup&gt;
+&lt;/form&gt;
+</code></pre>
             </details>
 
           <div class="kss-source kss-style">
