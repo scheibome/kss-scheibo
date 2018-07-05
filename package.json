@@ -10,6 +10,7 @@
     "kss": "kss --config kss-scheibo.json"
   },
   "devDependencies": {
+    "async": "^2.6.1",
     "css-scheibo": "git+ssh://git@github.com/scheibome/css-scheibo.git",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",

@@ -147,11 +147,11 @@
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
-              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide) referenceURI 'default'}}}
+              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default'}}}
             </div>
 
-            <div class="kss-modifier__example">
-              {{{modifierInsertSection example ../sections ../styleGuide}}}
+            <div class="kss-modifier__example"><h1>DELETE</h1>
+              {{{modifierInsertSection example ../sections ../styleGuide ../options.source}}}
               <div class="kss-modifier__example-footer"></div>
             </div>
             {{#each modifiers}}
@@ -167,10 +167,10 @@
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
-                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide) ../referenceURI @key}}}
+                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
-                {{{modifierInsertSection markup ../sections ../../styleGuide}}}
+                {{{modifierInsertSection markup ../sections ../../styleGuide ../../options.source}}}
                 <div class="kss-modifier__example-footer"></div>
               </div>
             {{/each}}
@@ -185,7 +185,7 @@
                   Markup
                 {{/if}}
               </summary>
-              <pre><code class="lang-markup">{{modifierInsertSection markup ../sections ../styleGuide}}</code></pre>
+              <pre><code class="lang-markup">{{modifierInsertSection markup ../sections ../styleGuide ../options.source}}</code></pre>
             </details>
           {{/if}}
         {{/if}}
