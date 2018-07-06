@@ -5,11 +5,7 @@ This is another section that includes the section with the different modifiers o
 
 form-field--inner - The label into the input
 
-Markup:
-  <div class="form-field {{modifier_class}}">
-    <label class="form-field__label">Name</label>
-    <insert-markup>1.1</insert-markup>
-  </div>
+Markup: templates/02_components/input_label.html
 
 Styleguide 2.1
 */
@@ -31,7 +27,7 @@ Styleguide 2.1
       color: $color-primary;
     }
   }
-  
+
   &--inner {
     position: relative;
 

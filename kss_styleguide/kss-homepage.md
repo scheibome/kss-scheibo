@@ -93,3 +93,7 @@ $kellygreen     : #1BB934
 Styleguide Colors
 */
 ```
+
+#### Hint
+
+Is the markup a file, the name must be unique.
