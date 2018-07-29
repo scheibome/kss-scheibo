@@ -26,6 +26,8 @@
 			sections.forEach(function(section) {
 				if (!section.id.startsWith(id)) {
 					section.classList.add(sectionclasshidden);
+				} else {
+					section.classList.remove(sectionclasshidden);
 				}
 			});
 			el.classList.remove(sectionclasshidden);
