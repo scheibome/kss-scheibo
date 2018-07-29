@@ -24,7 +24,9 @@
 		if (el = document.getElementById(id)) {
 			let sections = document.querySelectorAll(sectionclass);
 			sections.forEach(function(section) {
-				section.classList.add(sectionclasshidden);
+				if (!section.id.startsWith(id)) {
+					section.classList.add(sectionclasshidden);
+				}
 			});
 			el.classList.remove(sectionclasshidden);
 			this.pushUrl(id);
