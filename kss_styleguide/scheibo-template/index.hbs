@@ -151,7 +151,9 @@
             </div>
 
             <div class="kss-modifier__example">
-              {{{modifierInsertSection example ../sections ../styleGuide ../options.source}}}
+              {{#kssWrapper wrapper}}
+                {{{modifierInsertSection example ../sections ../styleGuide ../options.source}}}
+              {{/kssWrapper}}
               <div class="kss-modifier__example-footer"></div>
             </div>
             {{#each modifiers}}
@@ -170,7 +172,9 @@
                 {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key}}}
               </div>
               <div class="kss-modifier__example">
-                {{{modifierInsertSection markup ../sections ../../styleGuide ../../options.source}}}
+                {{#kssWrapper ../wrapper}}
+                  {{{modifierInsertSection markup ../sections ../../styleGuide ../../options.source}}}
+                {{/kssWrapper}}
                 <div class="kss-modifier__example-footer"></div>
               </div>
             {{/each}}

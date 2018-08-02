@@ -10,6 +10,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars);
 			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
+			require('../../lib/modules/wrapper')(this.Handlebars);
 			return styleGuide;
 		});
 	}

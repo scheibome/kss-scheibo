@@ -18,7 +18,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 {
   "title"        : "the name of your styleguide",
   "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors"],
+  "custom"       : ["Colors", "Wrapper"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
@@ -90,6 +90,35 @@ $crimson        : #ED1C24
 $kellygreen     : #1BB934
 
 Styleguide Colors
+*/
+```
+
+#### Wrapper
+
+add the following config in your ``kss-scheibo.json``
+
+```
+{
+  "custom" : ["Wrapper"]
+}
+```
+
+The markup for the wrapper is specified as follows:
+
+```
+/*
+Form
+
+Markup: templates/02_components/form.html
+
+Wrapper:
+<div style="background-color: grey;">
+  <wrapper-content/>
+</div>
+
+form-input--small - This is a large style
+
+Styleguide 2.2
 */
 ```
 
