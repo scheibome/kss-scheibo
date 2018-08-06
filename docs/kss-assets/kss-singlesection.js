@@ -24,10 +24,10 @@
 		if (el = document.getElementById(id)) {
 			let sections = document.querySelectorAll(sectionclass);
 			sections.forEach(function(section) {
-				if (!section.id.startsWith(id)) {
-					section.classList.add(sectionclasshidden);
-				} else {
+				if (section.id === id || section.id.startsWith(id + '-')) {
 					section.classList.remove(sectionclasshidden);
+				} else {
+					section.classList.add(sectionclasshidden);
 				}
 			});
 			el.classList.remove(sectionclasshidden);
