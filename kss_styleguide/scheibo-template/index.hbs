@@ -105,7 +105,6 @@
             </div>
           {{/if}}
 
-
           {{#if colors}}
             <ul class="kss-colors">
               {{#kssColors colors}}
@@ -147,7 +146,7 @@
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
-              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default'}}}
+              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' requirejs}}}
             </div>
 
             <div class="kss-modifier__example">
@@ -169,7 +168,7 @@
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
-                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key}}}
+                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key requirejs}}}
               </div>
               <div class="kss-modifier__example">
                 {{#kssWrapper ../wrapper}}
