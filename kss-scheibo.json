@@ -6,7 +6,6 @@
   "source"       : "source/",
   "destination"  : "docs",
   "homepage"     : "../kss_styleguide/kss-homepage.md",
-  "custom"       : ["Colors", "Wrapper"],
-  "css"          : ["kss-assets/scss/style.css"],
-  "js"           : []
+  "custom"       : ["Colors", "Wrapper", "RequireJS"],
+  "css"          : ["kss-assets/scss/style.css"]
 }
