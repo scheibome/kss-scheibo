@@ -7,7 +7,13 @@ let sass = require('gulp-sass');
 let postcss = require('gulp-postcss');
 let uncss = require('postcss-uncss');
 let exec = require('child_process').exec;
-let settings = JSON.parse(fs.readFileSync('./kss-scheibo.json'));
+let settings = require('./kss-scheibo.json');
+let pkg = require('./package.json');
+
+gulp.task('cname', function() {
+	let domain = pkg.homepage;
+	fs.writeFileSync('docs/CNAME', domain.replace('https://', ''));
+});
 
 gulp.task('sass', function() {
 	let plugins = [
@@ -35,7 +41,7 @@ gulp.task('kss', function(cb) {
 	});
 });
 
-gulp.task('watch', ['kss', 'sass', 'demo-sass'], function() {
+gulp.task('watch', ['kss', 'sass', 'demo-sass', 'cname'], function() {
 	gulp.watch(['kss_styleguide/**/**', 'lib/**/**'], ['kss']);
 	gulp.watch('kss_styleguide/scheibo-template/kss-assets/**/*.scss', ['sass']);
 	gulp.watch(settings.source + '/**/*.scss', ['demo-sass', 'kss']);
