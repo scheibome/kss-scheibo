@@ -18,7 +18,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 {
   "title"        : "the name of your styleguide",
   "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors", "Wrapper"],
+  "custom"       : ["Colors", "Wrapper", "RequireJS"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
@@ -117,6 +117,33 @@ Wrapper:
 </div>
 
 form-input--small - This is a large style
+
+Styleguide 2.2
+*/
+```
+
+#### RequireJS in fullscreen mode
+
+The first option is the path to requireJS, the second is the path to the data-main file.
+
+add the following config in your ``kss-scheibo.json``
+
+```
+{
+  "custom" : ["RequireJS"]
+}
+```
+
+The markup for the wrapper is specified as follows:
+
+```
+/*
+Form
+
+Markup: templates/02_components/form.html
+
+Requirejs:
+  /javascripts/Vendor/require.js : /javascripts/main
 
 Styleguide 2.2
 */
