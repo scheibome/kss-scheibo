@@ -19,7 +19,7 @@
 		});
 	};
 
-	KssSingleSection.prototype.setFocus = function(id) {
+	KssSingleSection.prototype.setFocus = function(id, trigger) {
 		let el;
 		if (el = document.getElementById(id)) {
 			let sections = document.querySelectorAll(sectionclass);
@@ -32,7 +32,15 @@
 			});
 			el.classList.remove(sectionclasshidden);
 			this.pushUrl(id);
+
+			if (trigger) {
+				let bodyRect = document.body.getBoundingClientRect();
+				let topPosition = bodyRect - (bodyRect * 2);
+				console.log(id, bodyRect, topPosition, trigger.offsetTop, trigger.layerY,  el);
+				el.style.marginTop = topPosition + 'px';
+			}
 		}
+
 		return true;
 	};
 
