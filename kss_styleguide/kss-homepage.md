@@ -11,7 +11,7 @@
 
 ## Setup
 
-Create a file name `kss-scheibo.json` in your package.json root with the following lines.
+Create a JSON file like `kss-scheibo.json` in your package.json root with the following lines.
 For all configurations see [kss-node documentation](https://github.com/kss-node/kss-node#using-the-command-line-tool)
 
 ```
