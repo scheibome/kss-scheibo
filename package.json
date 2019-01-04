@@ -7,8 +7,9 @@
   "homepage": "https://kss-scheibo.scheibitz.com",
   "author": "Thomas Scheibitz <npm@scheibitz.com> (https://www.scheibitz.com)",
   "scripts": {
+    "clean": "rimraf docs",
     "kss": "kss --config kss-scheibo.json",
-    "cname": "mkdirp docs2 -p && node .npm-scripts/cnameCreate.js"
+    "cname": "mkdirp docs -p && node .npm-scripts/cnameCreate.js"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.4",
@@ -23,6 +24,7 @@
     "parallelshell": "^3.0.2",
     "postcss-cli": "^6.1.1",
     "postcss-uncss": "^0.16.1",
+    "rimraf": "^2.6.3",
     "uncss": "^0.16.2"
   },
   "keywords": [

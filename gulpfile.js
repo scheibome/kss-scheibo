@@ -10,11 +10,6 @@ let exec = require('child_process').exec;
 let settings = require('./kss-scheibo.json');
 let pkg = require('./package.json');
 
-gulp.task('cname', function() {
-	let domain = pkg.homepage;
-	fs.writeFileSync('docs/CNAME', domain.replace('https://', ''));
-});
-
 gulp.task('sass', function() {
 	let plugins = [
 		uncss({
@@ -33,12 +28,6 @@ gulp.task('demo-sass', function() {
 	return gulp.src(settings.source + '/**/*.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
 		.pipe(gulp.dest('docs/kss-assets/'));
-});
-
-gulp.task('kss', function(cb) {
-	exec('node node_modules/kss/bin/kss --config kss-scheibo.json', function(err) {
-		cb(err);
-	});
 });
 
 gulp.task('watch', ['kss', 'sass', 'demo-sass', 'cname'], function() {
