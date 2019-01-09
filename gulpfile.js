@@ -20,7 +20,7 @@ gulp.task('sass', function() {
 		uncss({
 			html: ['docs/**/*.html'],
 			ignore: ['.kss-guides-mode .kss-modifier__example', '.kss-section--hidden']
-		}),
+		})
 	];
 
 	return gulp.src('kss_styleguide/scheibo-template/kss-assets/**/*.scss')
