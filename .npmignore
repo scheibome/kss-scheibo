@@ -1,5 +1,6 @@
 kss_styleguide/scheibo-template/kss-assets/kss.scss
 gulpfile.js
+.npm-scripts/
 /kss_styleguide/scheibo-template/*.html
 docs/
 .gitignore

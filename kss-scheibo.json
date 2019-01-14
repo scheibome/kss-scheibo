@@ -7,5 +7,5 @@
   "destination"  : "docs",
   "homepage"     : "../kss_styleguide/kss-homepage.md",
   "custom"       : ["Colors", "Wrapper", "RequireJS"],
-  "css"          : ["kss-assets/scss/style.css"]
+  "css"          : ["kss-assets/style.css"]
 }
