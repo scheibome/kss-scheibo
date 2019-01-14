@@ -29,12 +29,14 @@
     "css:postcss:kss": "node .npm-scripts/postcss.js",
     "css:postcss:demo": "node .npm-scripts/postcss.js --demo",
     "css:postcss": "npm run css:postcss:kss && npm run css:postcss:demo",
-    "css": "npm run scss && npm run css:postcss",
-    "build": "npm run clean && npm run kss && npm run cname && npm run css",
+    "css": "npm run kss && npm run scss && npm run css:postcss",
+    "build": "npm run clean && npm run cname && npm run css && npm run kss",
+    "browsersync": "browser-sync start --server docs --browser firefox --files docs/**/*",
     "watch": "npm-watch"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
     "css-scheibo": "git+ssh://git@github.com/scheibome/css-scheibo.git",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.11.0",
