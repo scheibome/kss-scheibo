@@ -13,13 +13,13 @@
 
 Create a ``kss-homepage.md`` and add your styles like [style-documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation) in your source folder.
 
-##### Builder:
+#### Builder
 ``node_modules/kss-scheibo/kss_styleguide/scheibo-template/``
 
-##### Custom:
+#### Custom
 ``['Colors', 'Wrapper', 'RequireJS']``
 
-###### Optional
+##### Optional
 Create a JSON file like `kss-scheibo.json` in your package.json root with the following lines.
 For all configurations see [kss-node documentation](https://github.com/kss-node/kss-node#using-the-command-line-tool)
 
