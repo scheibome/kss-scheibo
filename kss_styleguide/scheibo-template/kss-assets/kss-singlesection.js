@@ -34,10 +34,13 @@
 			this.pushUrl(id);
 
 			if (trigger) {
-				let bodyRect = document.body.getBoundingClientRect();
-				let topPosition = bodyRect - (bodyRect * 2);
-				console.log(id, bodyRect, topPosition, trigger.offsetTop, trigger.layerY,  el);
-				el.style.marginTop = topPosition + 'px';
+				let headerHeight = document.querySelector('header.kss-header').offsetHeight;
+				let windowTop = document.documentElement.scrollTop;
+				let contentTopMargin = windowTop - headerHeight;
+
+				if (windowTop > headerHeight) {
+					el.style.marginTop = contentTopMargin + 'px';
+				}
 			}
 		}
 
