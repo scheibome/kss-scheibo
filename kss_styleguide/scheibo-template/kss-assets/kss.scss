@@ -17,6 +17,8 @@ a {
 .kss-doc-title {
   @extend .text-2xl;
   @extend .font-normal;
+  @extend .text-white;
+  @extend .border-none;
 
   @include simplebreakpoint('md') {
     @include container;
@@ -80,6 +82,8 @@ a {
 
     &:hover {
       @extend .bg-grey-light;
+      @extend .text-current;
+      @extend .no-underline;
     }
 
     @include simplebreakpoint('md') {
@@ -111,6 +115,7 @@ a {
 }
 
 .kss-title {
+  @extend .border-none;
 
   &--level-1 {
     @extend .text-2xl;
@@ -205,6 +210,7 @@ a {
     @extend .border-grey-light;
     @extend .border-0;
     @extend .border-b-px;
+    @extend .relative;
   }
 
   &__defaultinsertmarkuptext {

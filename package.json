@@ -1,20 +1,49 @@
 {
   "name": "kss-scheibo",
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
   "homepage": "https://kss-scheibo.scheibitz.com",
   "author": "Thomas Scheibitz <npm@scheibitz.com> (https://www.scheibitz.com)",
+  "watch": {
+    "css": {
+      "patterns": [
+        "source/scss",
+        "kss_styleguide/scheibo-template/kss-assets"
+      ],
+      "extensions": "scss",
+      "quiet": true,
+      "legacyWatch": true,
+      "delay": 100,
+      "runOnChangeOnly": true
+    }
+  },
   "scripts": {
-    "kss": "kss --config kss-scheibo.json"
+    "clean": "rimraf docs",
+    "kss": "kss --config kss-scheibo.json",
+    "cname": "mkdirp docs -p && node .npm-scripts/cnameCreate.js",
+    "scss:demo": "node-sass source/scss -o docs/kss-assets --output-style compressed",
+    "scss:kss": "node-sass kss_styleguide/scheibo-template/kss-assets -o kss_styleguide/scheibo-template/kss-assets --output-style compressed",
+    "scss": "npm run scss:kss && npm run scss:demo",
+    "css:postcss:kss": "node .npm-scripts/postcss.js",
+    "css:postcss:demo": "node .npm-scripts/postcss.js --demo",
+    "css:postcss": "npm run css:postcss:kss && npm run css:postcss:demo",
+    "css": "npm run kss && npm run scss && npm run css:postcss",
+    "build": "npm run clean && npm run cname && npm run css && npm run kss",
+    "browsersync": "browser-sync start --server docs --browser firefox --files docs/**/*",
+    "watch": "npm-watch"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
     "css-scheibo": "git+ssh://git@github.com/scheibome/css-scheibo.git",
-    "gulp": "^3.9.1",
-    "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^4.0.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.11.0",
+    "npm-watch": "^0.5.0",
+    "postcss-cli": "^6.1.1",
     "postcss-uncss": "^0.16.1",
+    "rimraf": "^2.6.3",
     "uncss": "^0.16.2"
   },
   "keywords": [
@@ -30,6 +59,6 @@
   ],
   "dependencies": {
     "create-html": "^4.1.0",
-    "kss": "^3.0.0-beta.23"
+    "kss": "^3.0.0-beta.25"
   }
 }

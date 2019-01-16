@@ -19,7 +19,7 @@
 		});
 	};
 
-	KssSingleSection.prototype.setFocus = function(id) {
+	KssSingleSection.prototype.setFocus = function(id, trigger) {
 		let el;
 		if (el = document.getElementById(id)) {
 			let sections = document.querySelectorAll(sectionclass);
@@ -32,7 +32,18 @@
 			});
 			el.classList.remove(sectionclasshidden);
 			this.pushUrl(id);
+
+			if (trigger) {
+				let headerHeight = document.querySelector('header.kss-header').offsetHeight;
+				let windowTop = document.documentElement.scrollTop;
+				let contentTopMargin = windowTop - headerHeight;
+
+				if (windowTop > headerHeight) {
+					el.style.marginTop = contentTopMargin + 'px';
+				}
+			}
 		}
+
 		return true;
 	};
 
