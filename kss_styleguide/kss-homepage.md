@@ -11,7 +11,16 @@
 
 ## Setup
 
-Create a file name `kss-scheibo.json` in your package.json root with the following lines.
+Create a ``kss-homepage.md`` and add your styles like [style-documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation) in your source folder.
+
+#### Builder
+``node_modules/kss-scheibo/kss_styleguide/scheibo-template/``
+
+#### Custom
+``['Colors', 'Wrapper', 'RequireJS']``
+
+##### Optional
+Create a JSON file like `kss-scheibo.json` in your package.json root with the following lines.
 For all configurations see [kss-node documentation](https://github.com/kss-node/kss-node#using-the-command-line-tool)
 
 ```
@@ -25,13 +34,15 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 }
 ```
 
-Create a ``kss-homepage.md`` and add your styles like [style-documentation](https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation) in your source folder.
-
 ## Generate
 
 Generate your styleguide with the following line:
 
-`node node_modules/kss/bin/kss --config kss-scheibo.json`
+``node node_modules/kss/bin/kss --config [yourconfigname].json``
+
+or
+
+``node node_modules/kss/bin/kss --source "assets/" --destination "../styleguide/" --builder "node_modules/kss-scheibo/kss_styleguide/scheibo-template/" --custom "['Colors', 'Wrapper', 'RequireJS']" `` etc.
 
 ## Using kss-scheibo with Gulp
 

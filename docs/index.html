@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="kss-assets/kss.css">
   <link rel="stylesheet" href="kss-assets/prism.css">
-  <link rel="stylesheet" href="kss-assets/scss/style.css">
+  <link rel="stylesheet" href="kss-assets/style.css">
 
 </head>
 <body style="margin: 0;" id="kss-node" >
@@ -55,7 +55,13 @@
 <h2>Install</h2>
 <p><code>npm install kss-scheibo --save-dev</code></p>
 <h2>Setup</h2>
-<p>Create a file name <code>kss-scheibo.json</code> in your package.json root with the following lines.
+<p>Create a <code>kss-homepage.md</code> and add your styles like <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation">style-documentation</a> in your source folder.</p>
+<h4>Builder</h4>
+<p><code>node_modules/kss-scheibo/kss_styleguide/scheibo-template/</code></p>
+<h4>Custom</h4>
+<p><code>['Colors', 'Wrapper', 'RequireJS']</code></p>
+<h5>Optional</h5>
+<p>Create a JSON file like <code>kss-scheibo.json</code> in your package.json root with the following lines.
 For all configurations see <a href="https://github.com/kss-node/kss-node#using-the-command-line-tool">kss-node documentation</a></p>
 <pre class="hljs"><code class="language-">{
   &quot;title&quot;        : &quot;the name of your styleguide&quot;,
@@ -66,10 +72,11 @@ For all configurations see <a href="https://github.com/kss-node/kss-node#using-t
   &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
 }
 </code></pre>
-<p>Create a <code>kss-homepage.md</code> and add your styles like <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md#style-documentation">style-documentation</a> in your source folder.</p>
 <h2>Generate</h2>
 <p>Generate your styleguide with the following line:</p>
-<p><code>node node_modules/kss/bin/kss --config kss-scheibo.json</code></p>
+<p><code>node node_modules/kss/bin/kss --config [yourconfigname].json</code></p>
+<p>or</p>
+<p><code>node node_modules/kss/bin/kss --source &quot;assets/&quot; --destination &quot;../styleguide/&quot; --builder &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot; --custom &quot;['Colors', 'Wrapper', 'RequireJS']&quot;</code> etc.</p>
 <h2>Using kss-scheibo with Gulp</h2>
 <pre class="hljs"><code class="language-">var gulp = require('gulp');
 var exec = require('child_process').exec;
