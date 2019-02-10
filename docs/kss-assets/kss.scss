@@ -92,6 +92,8 @@ $colors: (
 
 .kss-scheibo__body {
   @extend .bg-grey-lighter;
+  @extend .overflow-auto;
+  @extend .m-0;
 }
 
 a {
@@ -211,6 +213,7 @@ a {
   @extend .shadow-md;
   @extend .p-8;
   @extend .rounded-t-lg;
+  @extend .overflow-auto;
 }
 
 .kss-title {

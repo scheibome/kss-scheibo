@@ -92,6 +92,8 @@ $colors: (
 
 .kss-scheibo__body {
   @extend .bg-grey-lighter;
+  @extend .overflow-auto;
+  @extend .m-0;
 }
 
 a {
@@ -111,6 +113,8 @@ a {
   @extend .font-normal;
   @extend .text-white;
   @extend .border-none;
+  @extend .mx-auto;
+  @extend .my-4;
 
   @include simplebreakpoint('md') {
     @include container;
@@ -211,6 +215,7 @@ a {
   @extend .shadow-md;
   @extend .p-8;
   @extend .rounded-t-lg;
+  @extend .overflow-auto;
 }
 
 .kss-title {
