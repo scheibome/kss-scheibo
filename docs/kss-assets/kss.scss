@@ -128,6 +128,7 @@ a {
 }
 
 .kss-style {
+  $this: &;
   @extend .font-arial;
   @extend .text-grey-darkest;
 
@@ -140,7 +141,7 @@ a {
     background-color: var(--kss-scheibo--maincolor);
     color: var(--kss-scheibo--maincolor-con);
 
-    #kssref-colors & {
+    &#{$this}--colorlist {
       @extend .bg-grey-lighter;
       @extend .text-grey-darkest;
     }
@@ -476,6 +477,7 @@ a {
   @extend .p-8;
 
   h1 {
+    @extend .text-2xl;
     @extend .py-12;
     @extend .px-8;
     @extend .-mx-8;
@@ -486,13 +488,18 @@ a {
   }
 
   h2 {
-    @extend .border-solid;
-    @extend .border-0;
-    @extend .border-b-1;
-    @extend .pb-3;
     @extend .pt-8;
-    @include w-("1\\/2");
-    border-color: var(--kss-scheibo--maincolor);
+
+    &:after {
+      content: '';
+      @extend .block;
+      @include w-("1\\/2");
+      @extend .border-solid;
+      @extend .border-0;
+      @extend .border-b-1;
+      @extend .mt-3;
+      border-color: var(--kss-scheibo--maincolor);
+    }
   }
 
   h4 {
