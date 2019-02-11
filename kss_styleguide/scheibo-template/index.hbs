@@ -68,10 +68,9 @@
     }}
     {{#each sections}}
       <{{#if @first}}div{{else}}section{{/if}} id="kssref-{{referenceURI}}" class="kss-section kss-section--depth-{{depth}} {{#if @root.template.isItem}}is-fullscreen{{/if}}">
-
-        <div class="kss-style">
+        <div class="kss-style kss-style--header {{#if example}}{{else}}kss-style--maincolor{{/if}}">
           <a class="kss-title__permalink" href="#kssref-{{referenceURI}}">
-            <h{{depth}} class="kss-title kss-title--level-{{depth}} kss-style">
+            <h{{depth}} class="kss-title kss-title--level-{{depth}} kss-style {{#if example}}{{else}}kss-title--onmaincolor{{/if}}">
                 {{header}}
             </h{{depth}}>
           </a>
@@ -191,12 +190,12 @@
               <pre><code class="lang-markup">{{modifierInsertSection markup ../sections ../styleGuide ../options.source}}</code></pre>
             </details>
           {{/if}}
-        {{/if}}
 
-        {{#if source.filename}}
-          <div class="kss-source kss-style">
-            Source: <code>{{source.filename}}</code>, line {{source.line}}
-          </div>
+          {{#if source.filename}}
+            <div class="kss-source kss-style">
+              Source: <code>{{source.filename}}</code>, line {{source.line}}
+            </div>
+          {{/if}}
         {{/if}}
 
       </{{#if @first}}div{{else}}section{{/if}}>

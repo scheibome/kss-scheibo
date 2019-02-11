@@ -163,3 +163,14 @@ Styleguide 2.2
 #### Hint
 
 Is the markup a file, the name must be unique.
+
+#### Theme Color
+
+You can set your own maincolors for the theme by set the following css pseudo-classes
+
+```
+:root {
+  #{--kss-scheibo--maincolor}: #6CB2EB;
+  #{--kss-scheibo--maincolor-con}: #FFFFFF;
+}
+```

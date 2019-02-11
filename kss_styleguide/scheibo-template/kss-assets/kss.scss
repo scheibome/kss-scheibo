@@ -90,8 +90,13 @@ $colors: (
         'pink-lightest': #ffebef,
 );
 
+:root {
+  #{--kss-scheibo--maincolor}: #6CB2EB;
+  #{--kss-scheibo--maincolor-con}: #FFFFFF;
+}
+
 .kss-scheibo__body {
-  @extend .bg-grey-lighter;
+  @extend .bg-grey-lightest;
   @extend .overflow-auto;
   @extend .m-0;
 }
@@ -101,8 +106,8 @@ a {
 }
 
 .kss-header {
-  @extend .bg-blue-light;
-  @extend .text-white;
+  background-color: var(--kss-scheibo--maincolor);
+  color: var(--kss-scheibo--maincolor-con);
   @extend .font-arial;
   @extend .px-4;
   @extend .py-1;
@@ -111,10 +116,10 @@ a {
 .kss-doc-title {
   @extend .text-2xl;
   @extend .font-normal;
-  @extend .text-white;
   @extend .border-none;
   @extend .mx-auto;
   @extend .my-4;
+  color: var(--kss-scheibo--maincolor-con);
 
   @include simplebreakpoint('md') {
     @include container;
@@ -125,6 +130,21 @@ a {
 .kss-style {
   @extend .font-arial;
   @extend .text-grey-darkest;
+
+  &--header {
+    @extend .bg-grey-lighter;
+    @extend .p-8;
+  }
+
+  &--maincolor {
+    background-color: var(--kss-scheibo--maincolor);
+    color: var(--kss-scheibo--maincolor-con);
+
+    #kssref-colors & {
+      @extend .bg-grey-lighter;
+      @extend .text-grey-darkest;
+    }
+  }
 }
 
 .kss-container {
@@ -132,7 +152,7 @@ a {
   @extend .mx-auto;
   @extend .px-4;
 
-  @include simplebreakpoint('md') {
+  @include simplebreakpoint('tablet') {
     @include container;
     @include flex;
     @include justify-between;
@@ -149,7 +169,7 @@ a {
     @extend .list-reset;
     @extend .ml-4;
 
-    @include simplebreakpoint('md') {
+    @include simplebreakpoint('tablet') {
       @include m('t', '2');
     }
   }
@@ -160,7 +180,7 @@ a {
     @extend .border-0;
     @extend .border-t-px;
 
-    @include simplebreakpoint('md') {
+    @include simplebreakpoint('tablet') {
       @include border-none;
       @include m('b', '2');
     }
@@ -175,30 +195,36 @@ a {
     @extend .flex-row-reverse;
     @extend .justify-between;
     @extend .cursor-pointer;
+    @extend .text-sm;
 
     &:hover {
-      @extend .bg-grey-light;
       @extend .text-current;
       @extend .no-underline;
     }
 
-    @include simplebreakpoint('md') {
-      @include rounded();
-      @include bg-color(grey-lightest);
+    @include simplebreakpoint('tablet') {
 
       &:hover {
-        @include bg-color('grey-light');
+        @include border-solid;
+        @include border-width(0);
+        @include border-width(1, l);
+        border-color: var(--kss-scheibo--maincolor);
       }
 
       &--active {
-        @include bg-color(blue-lighter);
+        @include border-solid;
+        @include border-width(0);
+        @include border-width(1, l);
+        border-color: var(--kss-scheibo--maincolor);
       }
 
       .kss-nav__menu-child & {
-        @include bg-color('grey-light');
 
         &:hover {
-          @include bg-color(blue-lighter);
+          @include border-solid;
+          @include border-width(0);
+          @include border-width(1, l);
+          border-color: var(--kss-scheibo--maincolor);
         }
       }
     }
@@ -213,13 +239,13 @@ a {
 .kss-main {
   @extend .bg-white;
   @extend .shadow-md;
-  @extend .p-8;
   @extend .rounded-t-lg;
   @extend .overflow-auto;
 }
 
 .kss-title {
   @extend .border-none;
+  @extend .font-normal;
 
   &--level-1 {
     @extend .text-2xl;
@@ -232,6 +258,14 @@ a {
 
   &__permalink {
     @extend .no-underline;
+  }
+
+  &--onmaincolor {
+    color: var(--kss-scheibo--maincolor-con);
+
+    #kssref-colors & {
+      @extend .text-grey-darkest;
+    }
   }
 }
 
@@ -304,6 +338,16 @@ a {
   }
 }
 
+.kss-source,
+.kss-markup {
+  @extend .p-8;
+  @extend .bg-grey-lightest;
+}
+
+.kss-source {
+  @extend .pt-0;
+}
+
 .kss-modifier {
 
   &__example {
@@ -358,14 +402,26 @@ a {
     @extend .italic;
     @extend .text-sm;
   }
+
+  &__wrapper {
+    @extend .p-8;
+  }
 }
 
 .kss-section {
-  @extend .mb-14;
+  @extend .border-grey-light;
+  @extend .border-0;
+  @extend .border-b-px;
+  @extend .border-solid;
 
   &--hidden {
     @extend .hidden;
   }
+}
+
+.kss-description {
+  @extend .text-grey-dark;
+  @extend .text-sm;
 }
 
 
@@ -405,18 +461,48 @@ a {
   }
 }
 
-@include simplebreakpoint('md') {
+@include simplebreakpoint('tablet') {
 
   .kss-sidebar {
     @include w-("1\\/5");
   }
 
   .kss-main {
-    width: calc(#{map-get($widths, "4\\/5")} - 5rem);
+    width: calc(#{map-get($widths, "4\\/5")} - 2rem);
   }
 }
 
 .kss-overview {
+  @extend .p-8;
+
+  h1 {
+    @extend .py-12;
+    @extend .px-8;
+    @extend .-mx-8;
+    @extend .-mt-8;
+    @extend .font-normal;
+    background-color: var(--kss-scheibo--maincolor);
+    color: var(--kss-scheibo--maincolor-con);
+  }
+
+  h2 {
+    @extend .border-solid;
+    @extend .border-0;
+    @extend .border-b-1;
+    @extend .pb-3;
+    @extend .pt-8;
+    @include w-("1\\/2");
+    border-color: var(--kss-scheibo--maincolor);
+  }
+
+  h4 {
+    @extend .border-solid;
+    @extend .border-0;
+    @extend .border-l-1;
+    @extend .py-3;
+    @extend .pl-3;
+    border-color: var(--kss-scheibo--maincolor);
+  }
 
   td {
     @extend .px-3;
@@ -428,8 +514,8 @@ a {
 
   hr {
     @extend .border-0;
-    @extend .bg-blue-light;
     @extend .h-px;
+    background-color: var(--kss-scheibo--maincolor);
   }
 }
 
