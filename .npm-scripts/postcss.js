@@ -16,7 +16,19 @@ if (process.argv[2] === '--demo') {
 fs.readFile(filePath + 'kss.css', (err, css) => {
 	postcss([uncss({
 		html: ['docs/*.html'],
-		ignore: ['.kss-guides-mode .kss-modifier__example', '.kss-section--hidden']
+		ignore: [
+			'.kss-guides-mode .kss-modifier__example',
+			'.kss-section--hidden',
+			'.kss-fullscreen-mode',
+			'.kss-fullscreen-mode .kss-header',
+			'.kss-fullscreen-mode .kss-sidebar',
+			'.kss-fullscreen-mode .kss-section',
+			'.kss-fullscreen-mode .kss-github',
+			'.kss-fullscreen-mode .kss-container',
+			'.kss-fullscreen-mode .kss-main',
+			'.kss-fullscreen-mode .kss-modifier',
+			'.kss-fullscreen-mode .kss-modifier__example'
+		]
 	}), autoprefixer])
 	.process(css, {
 		from: filePath + 'kss.css',
