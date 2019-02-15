@@ -148,7 +148,7 @@
               {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' requirejs bodyclass}}}
             </div>
 
-            <div class="kss-modifier__example">
+            <div class="kss-modifier__example {{modifierBodyClass bodyclass}}">
               {{#kssWrapper wrapper}}
                 {{{modifierInsertSection example ../sections ../styleGuide ../options.source}}}
               {{/kssWrapper}}
@@ -169,7 +169,7 @@
                 </div>
                 {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key requirejs bodyclass}}}
               </div>
-              <div class="kss-modifier__example">
+              <div class="kss-modifier__example {{modifierBodyClass bodyclass}}">
                 {{#kssWrapper ../wrapper}}
                   {{{modifierInsertSection markup ../sections ../../styleGuide ../../options.source}}}
                 {{/kssWrapper}}
