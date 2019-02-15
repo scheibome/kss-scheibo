@@ -133,8 +133,14 @@ Styleguide 2.2
 */
 ```
 
-#### RequireJS in fullscreen mode
+#### RequireJS
 
+##### Global
+
+You can add RequireJs as global option and in every single fullscreen mode.
+To add RequireJs global, add ``"requirejs": ["/javascripts/Vendor/require.js", "/javascripts/main"]`` into the ``kss-scheibo.json`` as new option. 
+
+##### Only in the fullscreen mode and every single element
 The first option is the path to requireJS, the second is the path to the data-main file.
 
 add the following config in your ``kss-scheibo.json``
