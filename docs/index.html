@@ -59,14 +59,14 @@
 <h4>Builder</h4>
 <p><code>node_modules/kss-scheibo/kss_styleguide/scheibo-template/</code></p>
 <h4>Custom</h4>
-<p><code>['Colors', 'Wrapper', 'RequireJS']</code></p>
+<p><code>[&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;BodyClass&quot;]</code></p>
 <h5>Optional</h5>
 <p>Create a JSON file like <code>kss-scheibo.json</code> in your package.json root with the following lines.
 For all configurations see <a href="https://github.com/kss-node/kss-node#using-the-command-line-tool">kss-node documentation</a></p>
 <pre class="hljs"><code class="language-">{
   &quot;title&quot;        : &quot;the name of your styleguide&quot;,
   &quot;builder&quot;      : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
-  &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;],
+  &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;BodyClass&quot;],
   &quot;source&quot;       : &quot;assets/&quot;,
   &quot;destination&quot;  : &quot;../styleguide/&quot;,
   &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
@@ -150,7 +150,7 @@ Styleguide 2.2
   &quot;custom&quot; : [&quot;RequireJS&quot;]
 }
 </code></pre>
-<p>The markup for the wrapper is specified as follows:</p>
+<p>The markup for requireJs in fullscreen mode is specified as follows:</p>
 <pre class="hljs"><code class="language-">/*
 Form
 
@@ -158,6 +158,24 @@ Markup: templates/02_components/form.html
 
 Requirejs:
   /javascripts/Vendor/require.js : /javascripts/main
+
+Styleguide 2.2
+*/
+</code></pre>
+<h4>Bodyclass in fullscreen mode</h4>
+<p>You can add your own bodyclass for every single fullscreen mode.</p>
+<p>Add the following config in your <code>kss-scheibo.json</code></p>
+<pre class="hljs"><code class="language-">{
+  &quot;custom&quot; : [&quot;BodyClass&quot;]
+}
+</code></pre>
+<p>The markup for bodyclass in fullscreen mode is specified as follows:</p>
+<pre class="hljs"><code class="language-">/*
+Form
+
+Markup: templates/02_components/form.html
+
+bodyclass: demobodyclass
 
 Styleguide 2.2
 */

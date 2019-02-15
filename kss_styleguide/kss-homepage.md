@@ -17,7 +17,7 @@ Create a ``kss-homepage.md`` and add your styles like [style-documentation](http
 ``node_modules/kss-scheibo/kss_styleguide/scheibo-template/``
 
 #### Custom
-``['Colors', 'Wrapper', 'RequireJS']``
+``["Colors", "Wrapper", "RequireJS", "BodyClass"]``
 
 ##### Optional
 Create a JSON file like `kss-scheibo.json` in your package.json root with the following lines.
@@ -27,7 +27,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 {
   "title"        : "the name of your styleguide",
   "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors", "Wrapper", "RequireJS"],
+  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
@@ -145,7 +145,7 @@ add the following config in your ``kss-scheibo.json``
 }
 ```
 
-The markup for the wrapper is specified as follows:
+The markup for requireJs in fullscreen mode is specified as follows:
 
 ```
 /*
@@ -155,6 +155,32 @@ Markup: templates/02_components/form.html
 
 Requirejs:
   /javascripts/Vendor/require.js : /javascripts/main
+
+Styleguide 2.2
+*/
+```
+
+#### Bodyclass in fullscreen mode
+
+You can add your own bodyclass for every single fullscreen mode.
+
+Add the following config in your ``kss-scheibo.json``
+
+```
+{
+  "custom" : ["BodyClass"]
+}
+```
+
+The markup for bodyclass in fullscreen mode is specified as follows:
+
+```
+/*
+Form
+
+Markup: templates/02_components/form.html
+
+bodyclass: demobodyclass
 
 Styleguide 2.2
 */
