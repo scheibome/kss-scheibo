@@ -264,7 +264,7 @@ a {
   &--onmaincolor {
     color: var(--kss-scheibo--maincolor-con);
 
-    #kssref-colors & {
+    .kss-style--colorlist & {
       @extend .text-grey-darkest;
     }
   }

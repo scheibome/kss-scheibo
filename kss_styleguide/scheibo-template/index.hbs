@@ -145,10 +145,10 @@
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
-              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' requirejs}}}
+              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' requirejs ../options.requirejs bodyclass ../options.bodyclass}}}
             </div>
 
-            <div class="kss-modifier__example">
+            <div class="kss-modifier__example {{modifierBodyClass bodyclass ../options.bodyclass}}">
               {{#kssWrapper wrapper}}
                 {{{modifierInsertSection example ../sections ../styleGuide ../options.source}}}
               {{/kssWrapper}}
@@ -167,9 +167,9 @@
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
-                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key requirejs}}}
+                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key requirejs ../../options.requirejs bodyclass ../../options.bodyclass}}}
               </div>
-              <div class="kss-modifier__example">
+              <div class="kss-modifier__example {{modifierBodyClass bodyclass ../../options.bodyclass}}">
                 {{#kssWrapper ../wrapper}}
                   {{{modifierInsertSection markup ../sections ../../styleGuide ../../options.source}}}
                 {{/kssWrapper}}
@@ -229,5 +229,8 @@
   });
 </script>
 {{{scripts}}}
+{{#if options.requirejs}}
+  {{{modifierRequireJs options.requirejs}}}
+{{/if}}
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "kss-scheibo",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
@@ -30,12 +30,12 @@
     "css:postcss:demo": "node .npm-scripts/postcss.js --demo",
     "css:postcss": "npm run css:postcss:kss && npm run css:postcss:demo",
     "css": "npm run kss && npm run scss && npm run css:postcss",
-    "build": "npm run clean && npm run cname && npm run css && npm run kss",
+    "build": "npm run clean && npm run cname && npm run css && npm run kss && echo \"Please copy the 'kss_styleguide/kss-homepage.md' to 'README.md'\"",
     "browsersync": "browser-sync start --server docs --browser firefox --files docs/**/*",
     "watch": "npm-watch"
   },
   "devDependencies": {
-    "autoprefixer": "^9.4.6",
+    "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.3",
     "css-scheibo": "git+ssh://git@github.com/scheibome/css-scheibo.git",
     "mkdirp": "^0.5.1",
