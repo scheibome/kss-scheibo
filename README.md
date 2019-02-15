@@ -142,8 +142,7 @@ To add RequireJs global, add ``"requirejs": ["/javascripts/Vendor/require.js", "
 
 ##### Only in the fullscreen mode and every single element
 The first option is the path to requireJS, the second is the path to the data-main file.
-
-add the following config in your ``kss-scheibo.json``
+Add the following config in your ``kss-scheibo.json``
 
 ```
 {
@@ -166,10 +165,16 @@ Styleguide 2.2
 */
 ```
 
-#### Bodyclass in fullscreen mode
+#### Bodyclass
+
+##### Global
+
+You can add a global body class and in every single fullscreen mode.
+To add your class global, add ``"bodyclass": "yourclassname"`` into the ``kss-scheibo.json`` as new option. 
+
+##### Only in the fullscreen mode and every single element
 
 You can add your own bodyclass for every single fullscreen mode.
-
 Add the following config in your ``kss-scheibo.json``
 
 ```

@@ -14,6 +14,13 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				string: true
 			}
 		});
+
+		this.addOptionDefinitions({
+			bodyclass: {
+				group: 'Style guide:',
+				string: true
+			}
+		});
 	}
 
 	prepare(styleGuide) {
