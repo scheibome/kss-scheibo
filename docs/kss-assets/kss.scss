@@ -565,3 +565,14 @@ a {
     @extend .mb-2;
   }
 }
+
+.kss-search {
+
+  &__list {
+    @extend .hidden;
+
+    &--display {
+      @extend .block;
+    }
+  }
+}
