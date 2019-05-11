@@ -568,11 +568,25 @@ a {
 
 .kss-search {
 
+  &__input {
+    box-sizing: border-box;
+    @extend .w-full;
+    @extend .p-2;
+  }
+
   &__list {
-    @extend .hidden;
+    //@extend .list-reset;
+    @extend .bg-grey-lighter;
+    @extend .mt-0;
+    @extend .p-2;
+    display: none;
 
     &--display {
-      @extend .block;
+      display: block;
     }
+  }
+
+  &__desc {
+    display: none !important;
   }
 }

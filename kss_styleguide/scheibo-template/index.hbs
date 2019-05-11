@@ -20,17 +20,27 @@
 <div class="kss-container">
   <div class="kss-sidebar kss-style">
     <div class="kss-search">
-      <input type="text" class="search__input" id="kss-search__input" onkeyup="kssSearch()" placeholder="Search">
-      <ul class="kss-search__list" id="kss-search__list">
+      <input type="text" class="kss-search__input" id="kss-search__input" placeholder="Search">
+      <ul class="kss-search__list kss-nav__menu" id="kss-search__list">
         {{#each menu}}
-        <li>
-          <a class="kss-nav-link {{#if isActive}}is-active{{/if}} {{#if children}}has-children{{/if}}" href="section-{{referenceURI}}.html">
-            {{referenceNumber}} - {{header}}
+        <li class="kss-search__item kss-nav__menu-item">
+          <a class="kss-search__link kss-nav__menu-link {{#if isActive}}is-active{{/if}} {{#if children}}has-children{{/if}}" href="section-{{referenceURI}}.html">
+              <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+              {{#if description}}
+                  <div class="kss-search__desc">
+                      {{{description}}}
+                  </div>
+              {{/if}}
           </a>
           {{#if children}} {{#each children}}
-          <li class="{{#if isGrandChild}}is-grandchild{{/if}}">
-            <a class="kss-nav-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-              {{referenceNumber}} - {{header}}
+          <li class="kss-search__item kss-nav__menu-item {{#if isGrandChild}}is-grandchild{{/if}}">
+            <a class="kss-search__link kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+                {{#if description}}
+                    <div class="kss-search__desc">
+                        {{{description}}}
+                    </div>
+                {{/if}}
             </a>
           </li>
           {{/each}} {{/if}}
