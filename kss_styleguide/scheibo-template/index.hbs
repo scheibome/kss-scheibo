@@ -145,7 +145,7 @@
               <div class="kss-modifier__defaultinsertmarkuptext">
                 {{modifierInsertCode referenceURI ""}}
               </div>
-              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' requirejs ../options.requirejs bodyclass ../options.bodyclass}}}
+              {{{modifierFullscreenButton header (modifierInsertSection markup ../sections ../styleGuide ../options.source) referenceURI 'default' '' requirejs ../options.requirejs bodyclass ../options.bodyclass}}}
             </div>
 
             <div class="kss-modifier__example {{modifierBodyClass bodyclass ../options.bodyclass}}">
@@ -167,7 +167,7 @@
                     {{modifierInsertCode ../referenceURI @key}}
                   </div>
                 </div>
-                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key ../requirejs ../../options.requirejs ../bodyclass ../../options.bodyclass}}}
+                {{{modifierFullscreenButton name (modifierInsertSection markup ../sections ../../styleGuide ../../options.source) ../referenceURI @key ../wrapper ../requirejs ../../options.requirejs ../bodyclass ../../options.bodyclass}}}
               </div>
               <div class="kss-modifier__example {{modifierBodyClass ../bodyclass ../../options.bodyclass}}">
                 {{#kssWrapper ../wrapper name}}
