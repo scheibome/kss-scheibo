@@ -34,7 +34,7 @@
           </a>
           {{#if children}} {{#each children}}
           <li class="kss-search__item kss-nav__menu-item {{#if isGrandChild}}is-grandchild{{/if}}">
-            <a class="kss-search__link kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+            <a class="kss-search__link kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}" data-singlesectiontrigger="kssref-{{referenceURI}}">
                 <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
                 {{#if description}}
                     <div class="kss-search__desc">
