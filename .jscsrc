@@ -1,10 +1,5 @@
 {
   /**
-   * -----------------------------------------------------------------------------
-   *
-   * Please contact roland.waldner@in2code.de before you modify this file.
-   *
-   * -----------------------------------------------------------------------------
    *
    * This is the project's configuration file for the JavaScript codesniffing tool
    * jscs (Javascript Codesniffer). It can be used when working with jscs on the

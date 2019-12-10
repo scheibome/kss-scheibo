@@ -27,7 +27,8 @@ fs.readFile(filePath + 'kss.css', (err, css) => {
 			'.kss-fullscreen-mode .kss-container',
 			'.kss-fullscreen-mode .kss-main',
 			'.kss-fullscreen-mode .kss-modifier',
-			'.kss-fullscreen-mode .kss-modifier__example'
+			'.kss-fullscreen-mode .kss-modifier__example',
+			'.kss-search__list--display'
 		]
 	}), autoprefixer])
 	.process(css, {
