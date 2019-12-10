@@ -1,6 +1,6 @@
 {
   "name": "kss-scheibo",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
