@@ -19,6 +19,35 @@
 </header>
 <div class="kss-container">
   <div class="kss-sidebar kss-style">
+    <div class="kss-search">
+      <input type="text" class="kss-search__input" id="kss-search__input" placeholder="Search">
+      <ul class="kss-search__list kss-nav__menu" id="kss-search__list">
+        {{#each menu}}
+        <li class="kss-search__item kss-nav__menu-item">
+          <a class="kss-search__link kss-nav__menu-link {{#if isActive}}is-active{{/if}} {{#if children}}has-children{{/if}}" href="section-{{referenceURI}}.html">
+              <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+              {{#if description}}
+                  <div class="kss-search__desc">
+                      {{{description}}}
+                  </div>
+              {{/if}}
+          </a>
+          {{#if children}} {{#each children}}
+          <li class="kss-search__item kss-nav__menu-item {{#if isGrandChild}}is-grandchild{{/if}}">
+            <a class="kss-search__link kss-nav__menu-link" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                <span class="kss-nav__ref">{{referenceNumber}}</span><span class="kss-nav__name">{{header}}</span>
+                {{#if description}}
+                    <div class="kss-search__desc">
+                        {{{description}}}
+                    </div>
+                {{/if}}
+            </a>
+          </li>
+          {{/each}} {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
     <nav class="kss-nav" aria-label="Style Guide">
       <ul class="kss-nav__menu">
         <li class="kss-nav__menu-item">
@@ -211,6 +240,7 @@
 <script src="kss-assets/kss-fullscreen.js"></script>
 <script src="kss-assets/kss-singlesection.js"></script>
 <script src="kss-assets/kss-guides.js"></script>
+<script src="kss-assets/search.js"></script>
 <script src="kss-assets/kss-markup.js"></script>
 <script src="kss-assets/prismjs.js"></script>
 <script>

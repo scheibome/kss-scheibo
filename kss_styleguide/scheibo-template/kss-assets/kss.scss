@@ -565,3 +565,28 @@ a {
     @extend .mb-2;
   }
 }
+
+.kss-search {
+
+  &__input {
+    box-sizing: border-box;
+    @extend .w-full;
+    @extend .p-2;
+  }
+
+  &__list {
+    //@extend .list-reset;
+    @extend .bg-grey-lighter;
+    @extend .mt-0;
+    @extend .p-2;
+    display: none;
+
+    &--display {
+      display: block;
+    }
+  }
+
+  &__desc {
+    display: none !important;
+  }
+}

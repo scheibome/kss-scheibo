@@ -1,11 +1,5 @@
 {
   /**
-   * -----------------------------------------------------------------------------
-   *
-   * Please contact roland.waldner@in2code.de before you modify this file.
-   *
-   * -----------------------------------------------------------------------------
-   *
    * This is the project's configuration file for the JavaScript linting/hinting
    * tool JSHint. It can be used when working with JSHint on the console, in
    * IDEs, with build tools or continuous integration enviroments.
