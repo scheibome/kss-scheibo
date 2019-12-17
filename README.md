@@ -1,7 +1,7 @@
 # KSS-Scheibo - a template for the KSS-node styleguide
 
-[![npm version](https://badge.fury.io/js/kss-scheibo.svg?style=flat)](https://npmjs.org/package/kss-scheibo) 
- [![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg) 
+[![npm version](https://badge.fury.io/js/kss-scheibo.svg?style=flat)](https://npmjs.org/package/kss-scheibo)
+ [![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg)
 ![npm](https://img.shields.io/npm/l/kss-scheibo.svg)
 
 
@@ -17,7 +17,7 @@ Create a ``kss-homepage.md`` and add your styles like [style-documentation](http
 ``node_modules/kss-scheibo/kss_styleguide/scheibo-template/``
 
 #### Custom
-``["Colors", "Wrapper", "RequireJS", "BodyClass"]``
+``["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"]``
 
 ##### Optional
 Create a JSON file like `kss-scheibo.json` in your package.json root with the following lines.
@@ -27,7 +27,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 {
   "title"        : "the name of your styleguide",
   "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass"],
+  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
@@ -55,7 +55,7 @@ gulp.task('kss', function(cb) {
 		cb(err);
 	});
 });
-``` 
+```
 
 ## Modifications
 
@@ -138,7 +138,7 @@ Styleguide 2.2
 ##### Global
 
 You can add RequireJs as global option and in every single fullscreen mode.
-To add RequireJs global, add ``"requirejs": ["/javascripts/Vendor/require.js", "/javascripts/main"]`` into the ``kss-scheibo.json`` as new option. 
+To add RequireJs global, add ``"requirejs": ["/javascripts/Vendor/require.js", "/javascripts/main"]`` into the ``kss-scheibo.json`` as new option.
 
 ##### Only in the fullscreen mode and every single element
 The first option is the path to requireJS, the second is the path to the data-main file.
@@ -170,7 +170,7 @@ Styleguide 2.2
 ##### Global
 
 You can add a global body class and in every single fullscreen mode.
-To add your class global, add ``"bodyclass": "yourclassname"`` into the ``kss-scheibo.json`` as new option. 
+To add your class global, add ``"bodyclass": "yourclassname"`` into the ``kss-scheibo.json`` as new option.
 
 ##### Only in the fullscreen mode and every single element
 
@@ -196,6 +196,13 @@ bodyclass: demobodyclass
 Styleguide 2.2
 */
 ```
+
+#### HTML lang attribute
+
+##### Global
+
+You can change the global [lang attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang).
+To change the lang attribute, add ``"lang": "de"`` into the ``kss-scheibo.json`` as new option.
 
 #### Hint
 
