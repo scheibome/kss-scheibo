@@ -202,7 +202,14 @@ Styleguide 2.2
 ##### Global
 
 You can change the global [lang attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang).
-To change the lang attribute, add ``"lang": "de"`` into the ``kss-scheibo.json`` as new option.
+To change the lang attribute, add ``"htmllang": "de"`` into the ``kss-scheibo.json`` as new option.
+
+```
+{
+  "custom" : ["HtmlLang"],
+  "htmllang": "de"
+}
+```
 
 #### Hint
 
