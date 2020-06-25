@@ -11,21 +11,24 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		this.addOptionDefinitions({
 			requirejs: {
 				group: 'Style guide:',
-				string: true
+				string: true,
+				describe: 'Add RequireJs as global option and in every single fullscreen mode.'
 			}
 		});
 
 		this.addOptionDefinitions({
 			bodyclass: {
 				group: 'Style guide:',
-				string: true
+				string: true,
+				describe: 'Add a global body class and in every single fullscreen mode.'
 			}
 		});
 
 		this.addOptionDefinitions({
 			htmllang: {
 				group: 'Style guide:',
-				string: true
+				string: true,
+				describe: 'Change the global lang attribute.'
 			}
 		});
 	}
