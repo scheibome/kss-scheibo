@@ -47,11 +47,13 @@ a {
 }
 
 .kss-nav__menu {
-  @apply list-none p-0;
+  @apply p-0;
+  list-style: none;
 }
 
 .kss-nav__menu-child {
-  @apply list-none p-0 ml-4;
+  @apply p-0 ml-4;
+  list-style: none;
 }
 
 .kss-nav__menu-item {
@@ -259,7 +261,8 @@ a {
 }
 
 .kss-colors {
-  @apply flex flex-wrap justify-between list-none p-0 text-base;
+  @apply flex flex-wrap justify-between p-0 text-base;
+  list-style: none;
 }
 
 .kss-colors:after {
