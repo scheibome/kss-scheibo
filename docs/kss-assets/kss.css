@@ -201,7 +201,7 @@ a {
 }
 
 .kss-description {
-  @apply text-gray-700 text-sm;
+  @apply text-sm;
 }
 
 .kss-fullscreen-mode .kss-header,
