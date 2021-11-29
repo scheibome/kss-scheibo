@@ -1,6 +1,6 @@
 {
   "name": "kss-scheibo",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "A custom template for the kss-node living styleguide.",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
@@ -14,14 +14,22 @@
     "css": "npm run kss && npm run tailwind && npm rum scss:demo",
     "build": "npm run clean && npm run cname && npm run css && npm run kss && echo \"Please copy the 'kss_styleguide/kss-homepage.md' to 'README.md'\"",
     "browsersync": "browser-sync start --server docs --browser firefox --files docs/**/*",
-    "tailwind": "postcss kss_styleguide/scheibo-template/kss-assets/kss.css -o kss_styleguide/scheibo-template/kss-assets/kss.min.css"
+    "tailwind": "postcss kss_styleguide/scheibo-template/kss-assets/kss.css -o kss_styleguide/scheibo-template/kss-assets/kss.min.css",
+    "webhint-1": "hint http://localhost:3000/section-1.html",
+    "webhint-2": "hint http://localhost:3000/section-2.html",
+    "webhint-3": "hint http://localhost:3000/section-3.html",
+    "webhint": "npm-run-all webhint-1 webhint-2 webhint-3"
   },
   "devDependencies": {
+    "@hint/configuration-accessibility": "^2.0.15",
+    "@hint/configuration-web-recommended": "^8.2.6",
     "autoprefixer": "^10.2.6",
     "browser-sync": "^2.26.7",
     "cssnano": "^5.0.6",
+    "hint": "^6.1.9",
     "mkdirp": "^1.0.4",
     "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",

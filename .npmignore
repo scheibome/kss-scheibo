@@ -8,3 +8,4 @@ docs/
 .jshintrc
 .idea/
 .editorconfig
+/hint-report
