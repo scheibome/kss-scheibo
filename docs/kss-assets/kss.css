@@ -2,7 +2,7 @@
 @tailwind utilities;
 
 :root {
-  --kss-scheibo--maincolor: #6CB2EB;
+  --kss-scheibo--maincolor: #1B7AC8;
   --kss-scheibo--maincolor-con: #FFFFFF;
 }
 
@@ -70,7 +70,7 @@ a {
 }
 
 .kss-nav__ref {
-  @apply pr-2 opacity-25;
+  @apply pr-2 opacity-75;
 }
 
 .kss-main {
@@ -166,7 +166,7 @@ a {
 }
 
 .kss-modifier__header {
-  @apply flex justify-between items-center opacity-25;
+  @apply flex justify-between items-center opacity-75;
   transition: opacity 0.5s;
 }
 
