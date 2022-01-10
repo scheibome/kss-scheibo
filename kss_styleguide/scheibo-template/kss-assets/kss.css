@@ -52,6 +52,10 @@ a {
   list-style: none;
 }
 
+.kss-nav__menu > li > ul {
+  list-style: none;
+}
+
 .kss-nav__menu-child {
   @apply p-0 ml-4;
   list-style: none;
