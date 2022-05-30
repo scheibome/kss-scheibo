@@ -37,7 +37,6 @@
 				if (!searchList.classList.contains(searchListDisplayClassname)) {
 					searchList.classList.add(searchListDisplayClassname);
 					mainNavigation.style.opacity = '0';
-					console.log(1641834680659, mainNavigation);
 				}
 				kssSearch();
 			});
