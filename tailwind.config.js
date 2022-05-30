@@ -1,11 +1,7 @@
 module.exports = {
-	purge: {
-		enabled: true,
-		content: ['./docs/**/*.html'],
-		safelist: [
-			'before',
-		]
-	},
+	content: [
+		'./docs/**/*.{html,js}'
+	],
 	theme: {
 		extend: {
 			colors: {
@@ -89,6 +85,5 @@ module.exports = {
 			'arial': ['arial', 'sans-serif'],
 		},
 	},
-	variants: {},
 	plugins: []
 };
