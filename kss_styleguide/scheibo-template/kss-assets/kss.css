@@ -239,7 +239,7 @@ a {
 }
 
 .kss-overview h2 {
-  @apply pt-8;
+  @apply pt-8 leading-snug;
 }
 
 .kss-overview h2:after {
