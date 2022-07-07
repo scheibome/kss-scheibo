@@ -47,7 +47,7 @@
     "LSG"
   ],
   "dependencies": {
-    "@franesberger/kss": "^3.1.2",
-    "create-html": "^4.1.0"
+    "create-html": "^4.1.0",
+    "kss": "https://github.com/kss-node/kss-node/tarball/231900c"
   }
 }
