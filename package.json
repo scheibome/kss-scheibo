@@ -48,6 +48,6 @@
   ],
   "dependencies": {
     "create-html": "^4.1.0",
-    "kss": "git+https://github.com/kss-node/kss-node.git#231900c"
+    "kss": "https://github.com/kss-node/kss-node/tarball/231900c"
   }
 }
