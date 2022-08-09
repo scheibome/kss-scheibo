@@ -1,7 +1,9 @@
 kss_styleguide/scheibo-template/kss-assets/kss.scss
 .npm-scripts/
-/kss_styleguide/scheibo-template/*.html
+kss_styleguide/scheibo-template/*.html
 docs/
+node_modules/
+source/
 .gitignore
 .package-lock.json
 .jscsrc
@@ -9,3 +11,5 @@ docs/
 .idea/
 .editorconfig
 /hint-report
+postcss.config.js
+tailwind.config.js
