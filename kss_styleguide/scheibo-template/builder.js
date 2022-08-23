@@ -9,6 +9,14 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		super();
 
 		this.addOptionDefinitions({
+			scriptModules: {
+				group: 'Style guide:',
+				string: true,
+				describe: 'Inject scripts with type module into body'
+			}
+		});
+
+		this.addOptionDefinitions({
 			requirejs: {
 				group: 'Style guide:',
 				string: true,
@@ -37,6 +45,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		return super.prepare(styleGuide).then(styleGuide => {
 			require('../../lib/modules/colors')(this.Handlebars);
 			require('../../lib/modules/modifierRequireJs')(this.Handlebars);
+			require('../../lib/modules/modifierScriptModule')(this.Handlebars);
 			require('../../lib/modules/modifierBodyClass')(this.Handlebars);
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars, this.options);

@@ -263,8 +263,13 @@
   });
 </script>
 {{{scripts}}}
+
 {{#if options.requirejs}}
-  {{{modifierRequireJs options.requirejs}}}
+{{{modifierRequireJs options.requirejs}}}
+{{/if}}
+
+{{#if options.scriptModules}}
+{{{modifierScriptModule options.scriptModules}}}
 {{/if}}
 </body>
 </html>
