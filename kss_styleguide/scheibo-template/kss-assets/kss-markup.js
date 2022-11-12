@@ -41,7 +41,7 @@
 	KssMarkup.prototype.highlightMarkup = function(element) {
 		if (!element.classList.contains('prism-highlighted')) {
 			window.Prism.highlightAllUnder(element);
-			element.currentTarget.classList.add('prism-highlighted');
+			element.classList.add('prism-highlighted');
 		}
 	}
 	// Export to DOM global space.
