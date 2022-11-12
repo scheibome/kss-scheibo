@@ -12,6 +12,18 @@
 		for (var button of elementList) {
 			button.onclick = self.showGuides.bind(self);
 		}
+
+		var detailMarkupElements = document.querySelectorAll('.' + this.detailsClass);
+		for (var detail of detailMarkupElements) {
+			detail.addEventListener('click', function(event) {
+				self.highlightMarkup(event.currentTarget);
+			});
+		}
+
+		var docsHighlights = document.querySelectorAll('pre.hljs');
+		for (var docsHighlight of docsHighlights) {
+			self.highlightMarkup(docsHighlight);
+		}
 	};
 	// Activation function that takes the ID of the element that will receive
 	// fullscreen focus.
@@ -24,11 +36,19 @@
 				el.removeAttribute('open');
 			} else {
 				el.setAttribute('open', '');
+				this.highlightMarkup(el);
 			}
 		}
 		// Toggle the markup mode.
 		body.classList.toggle(this.bodyClass);
 	};
+
+	KssMarkup.prototype.highlightMarkup = function(element) {
+		if (!element.classList.contains('prism-highlighted')) {
+			window.Prism.highlightAllUnder(element);
+			element.classList.add('prism-highlighted');
+		}
+	}
 	// Export to DOM global space.
 	window.KssMarkup = KssMarkup;
 })(window, document);
