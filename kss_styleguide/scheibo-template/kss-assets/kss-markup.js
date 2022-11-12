@@ -19,6 +19,11 @@
 				self.highlightMarkup(event.currentTarget);
 			});
 		}
+
+		var docsHighlights = document.querySelectorAll('pre.hljs');
+		for (var docsHighlight of docsHighlights) {
+			self.highlightMarkup(docsHighlight);
+		}
 	};
 	// Activation function that takes the ID of the element that will receive
 	// fullscreen focus.
