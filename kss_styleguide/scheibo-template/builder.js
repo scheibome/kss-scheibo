@@ -60,7 +60,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	}
 
 	/**
-	 * A helper method that can be used by sub-classes of KssBuilderBase when
+	 * A helper method that can be used by subclasses of KssBuilderBase when
 	 * implementing their build() method.
 	 *
 	 * The following options are required to use this helper method:
@@ -86,17 +86,15 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	 * @returns {Promise.<KssStyleGuide>} A `Promise` object resolving to a
 	 *   `KssStyleGuide` object.
 	 */
+	// jshint ignore:start
 	buildGuide(styleGuide, options) {
-		console.log(1673544701841, 'called here');
-		let readBuilderTemplate = options.readBuilderTemplate,
-			readSectionTemplate = options.readSectionTemplate,
-			loadInlineTemplate = options.loadInlineTemplate,
-			loadContext = options.loadContext,
-			// getTemplate = options.getTemplate,
-			// templateRender = options.templateRender,
-			filenameToTemplateRef = options.filenameToTemplateRef,
-			templateExtension = options.templateExtension,
-			emptyTemplate = options.emptyTemplate;
+		let readBuilderTemplate = options.readBuilderTemplate;
+		let readSectionTemplate = options.readSectionTemplate;
+		let loadInlineTemplate = options.loadInlineTemplate;
+		let loadContext = options.loadContext;
+		let filenameToTemplateRef = options.filenameToTemplateRef;
+		let templateExtension = options.templateExtension;
+		let emptyTemplate = options.emptyTemplate;
 
 		this.styleGuide = styleGuide;
 		this.sectionTemplates = {};
@@ -175,7 +173,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			return Promise.resolve();
 		};
 
-		sections.forEach(section => {
+		sections.forEach(section => { // jshint ignore:line
 			// Accumulate an array of section references for all sections at the root
 			// of the style guide.
 			let currentRoot = section.reference().split(/(?:\.|\ \-\ )/)[0];
@@ -225,7 +223,10 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 						};
 					};
 					findTemplates.push(glob(source + '/**/' + template.file).then(returnFilesAndSource));
-					findTemplates.push(glob(source + '/**/' + path.join(path.dirname(template.file), matchExampleFilename)).then(returnFilesAndSource));
+					findTemplates.push(
+						glob(source + '/**/' + path.join(path.dirname(template.file), matchExampleFilename))
+							.then(returnFilesAndSource)
+					);
 				});
 				buildTasks.push(
 					Promise.all(findTemplates).then(globMatches => {
@@ -310,8 +311,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			// Build the homepage.
 			buildPageTasks.push(this.buildPage('index', options, null, []));
 
-			// Group all of the sections by their root reference, and make a page for
-			// each.
+			// Group all the sections by their root reference, and make a page for each.
 			sectionRoots.forEach(rootReference => {
 				buildPageTasks.push(this.buildPage('section', options, rootReference, this.styleGuide.sections(rootReference + '.*')));
 			});
@@ -330,6 +330,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			return Promise.resolve(styleGuide);
 		});
 	}
+	// jshint ignore:end
 }
 
 module.exports = KssBuilderScheibo;
