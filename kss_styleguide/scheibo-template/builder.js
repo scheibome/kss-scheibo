@@ -5,6 +5,8 @@ const KssBuilderHandlebars = require('kss/builder/handlebars');
 const path = require('path');
 const Promise = require('bluebird');
 const glob = Promise.promisify(require('glob'));
+const fs = Promise.promisifyAll(require('fs-extra'));
+const pug = require('pug');
 
 class KssBuilderScheibo extends KssBuilderHandlebars {
 
@@ -60,6 +62,8 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	}
 
 	/**
+	 * Source: builder/base/kss_builder_base.js
+	 *
 	 * A helper method that can be used by subclasses of KssBuilderBase when
 	 * implementing their build() method.
 	 *
@@ -329,6 +333,94 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			// We return the KssStyleGuide, just like KssBuilderBase.build() does.
 			return Promise.resolve(styleGuide);
 		});
+	}
+
+	/**
+	 * Source: builder/base/handlebars/kss_builder_base_handlebars.js
+	 *
+	 * Build the HTML files of the style guide given a KssStyleGuide object.
+	 *
+	 * @param {KssStyleGuide} styleGuide The KSS style guide in object format.
+	 * @returns {Promise.<KssStyleGuide>} A `Promise` object resolving to a
+	 *   `KssStyleGuide` object.
+	 */
+	build(styleGuide) {
+		let options = {};
+		// Returns a promise to read/load a template provided by the builder.
+		options.readBuilderTemplate = (name) => {
+			return fs.readFileAsync(path.resolve(this.options.builder, name + '.hbs'), 'utf8').then(content => {
+				return this.Handlebars.compile(content);
+			});
+		};
+
+		// Returns a promise to read/load a template specified by a section.
+		options.readSectionTemplate = (name, filepath) => {
+			return fs.readFileAsync(filepath, 'utf8').then(fileContent => {
+				let output = fileContent;
+
+				const isPugFile = path.extname(filepath) === '.pug';
+				if (isPugFile) {
+					const pugFn = pug.compileFile(filepath);
+					output = pugFn();
+				}
+
+				this.Handlebars.registerPartial(name, output);
+				return output;
+			});
+		};
+
+		// Returns a promise to load an inline template from markup.
+		options.loadInlineTemplate = (name, markup) => {
+			this.Handlebars.registerPartial(name, markup);
+			return Promise.resolve();
+		};
+
+		// Returns a promise to load the data context given a template file path.
+		options.loadContext = filepath => {
+			let context;
+			// Load sample context for the template from the sample .json file.
+			try {
+				context = require(path.join(path.dirname(filepath), path.basename(filepath, path.extname(filepath)) + '.json'));
+				// require() returns a cached object. We want an independent clone of
+				// the object so we can make changes without affecting the original.
+				context = JSON.parse(JSON.stringify(context));
+			} catch (error) {
+				context = {};
+			}
+			return Promise.resolve(context);
+		};
+
+		// Returns a promise to get a template by name.
+		options.getTemplate = name => {
+			// We don't wrap the rendered template in "new handlebars.SafeString()"
+			// since we want the ability to display it as a code sample with {{ }} and
+			// as rendered HTML with {{{ }}}.
+			return Promise.resolve(this.Handlebars.compile('{{> "' + name + '"}}'));
+		};
+
+		// Returns a promise to get a template's markup by name.
+		options.getTemplateMarkup = name => {
+			// We don't wrap the rendered template in "new handlebars.SafeString()"
+			// since we want the ability to display it as a code sample with {{ }} and
+			// as rendered HTML with {{{ }}}.
+			return Promise.resolve(this.Handlebars.partials[name]);
+		};
+
+		// Renders a template and returns the markup.
+		options.templateRender = (template, context) => {
+			return template(context);
+		};
+
+		// Converts a filename into a Handlebars partial name.
+		options.filenameToTemplateRef = filename => {
+			// Return the filename without the full path or the file extension.
+			return path.basename(filename, path.extname(filename));
+		};
+
+		options.templateExtension = 'hbs';
+		options.emptyTemplate = '{{! Cannot be an empty string. }}';
+
+		return this.buildGuide(styleGuide, options);
 	}
 	// jshint ignore:end
 }
