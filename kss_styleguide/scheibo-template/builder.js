@@ -211,7 +211,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		sections.forEach(section => { // jshint ignore:line
 			// Accumulate an array of section references for all sections at the root
 			// of the style guide.
-			let currentRoot = section.reference().split(/(?:\.|\ \-\ )/)[0];
+			let currentRoot = section.reference().split(/(?:\.| - )/)[0];
 			if (sectionRoots.indexOf(currentRoot) === -1) {
 				sectionRoots.push(currentRoot);
 			}
@@ -232,7 +232,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			};
 
 			// Check if the markup is a file path.
-			if (template.markup.search('^[^\n]+\.(html|pug|' + templateExtension + ')$') === -1) {
+			if (template.markup.search('^[^\n]+.(html|pug|' + templateExtension + ')$') === -1) {
 				if (this.options.verbose) {
 					this.log(' - ' + template.reference + ': inline markup');
 				}
