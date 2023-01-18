@@ -45,17 +45,24 @@ or
 
 ``node node_modules/kss/bin/kss --source "assets/" --destination "../styleguide/" --builder "node_modules/kss-scheibo/kss_styleguide/scheibo-template/" --custom "['Colors', 'Wrapper', 'RequireJS']" `` etc.
 
-## Using kss-scheibo with Gulp
+## Using kss-scheibo
 
+```js
+const fs = require('fs-extra');
+const { build, watch } = require('kss-scheibo');
+
+const config = fs.readJsonSync('kss-scheibo.json');
+
+const buildStyleguide = async () => {
+    await build(config);
+};
+
+// build styleguide initially
+build({ kssOptions });
+
+// rebuild styleguide on every change to the css files
+watch('path/to/css/files', buildStyleguide);
 ```
-var gulp = require('gulp');
-var exec = require('child_process').exec;
-
-gulp.task('kss', function(cb) {
-	exec('node node_modules/kss/bin/kss --config kss-scheibo.json', function(err) {
-		cb(err);
-	});
-});
 ```
 
 ## Modifications
