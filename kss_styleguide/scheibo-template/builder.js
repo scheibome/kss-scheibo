@@ -39,6 +39,16 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				describe: 'Change the global lang attribute.'
 			}
 		});
+
+		this.addOptionDefinitions({
+			isVitePugEnabled: {
+				group: 'Style guide:',
+				boolean: true,
+				multiple: false,
+				describe: 'Whether the styleguide is used in a Vite environment',
+				default: false
+			},
+		});
 	}
 
 	prepare(styleGuide) {
@@ -50,8 +60,10 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars, this.options);
 			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
+			require('../../lib/modules/modifierIsVitePugEnabled')(this.Handlebars, this.options);
 			require('../../lib/modules/modifierHtmlLang')(this.Handlebars);
 			require('../../lib/modules/wrapper')(this.Handlebars);
+
 			return styleGuide;
 		});
 	}

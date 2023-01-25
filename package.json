@@ -20,6 +20,11 @@
     "webhint-3": "hint http://localhost:8856/section-3.html",
     "webhint": "npm-run-all webhint-1 webhint-2 webhint-3"
   },
+  "dependencies": {
+    "create-html": "https://github.com/scheibome/create-html/tarball/7967580",
+    "kss": "^3.1.0",
+    "pug": "^3.0.2"
+  },
   "devDependencies": {
     "@hint/configuration-accessibility": "^2.0.15",
     "@hint/configuration-web-recommended": "^8.2.6",
@@ -45,8 +50,5 @@
     "theme",
     "living styleguide",
     "LSG"
-  ],
-  "dependencies": {
-    "kss": "^3.1.0"
-  }
+  ]
 }

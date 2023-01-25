@@ -1,11 +1,14 @@
 {
-  "title"        : "KSS-Scheibo - Styleguide",
-  "mask"         : "*.scss",
-  "placeholder"  : "[modifier]",
-  "builder"      : "kss_styleguide/scheibo-template/",
-  "source"       : "source/",
-  "destination"  : "docs",
-  "homepage"     : "kss_styleguide/kss-homepage.md",
-  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
-  "css"          : ["kss-assets/docs.css"]
+  "title"             : "KSS-Scheibo - Styleguide",
+  "mask"              : "*.scss",
+  "placeholder"       : "[modifier]",
+  "builder"           : "kss_styleguide/scheibo-template/",
+  "source"            : "source/",
+  "destination"       : "docs",
+  "homepage"          : "kss_styleguide/kss-homepage.md",
+  "custom"            : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
+  "css"               : ["kss-assets/docs.css"],
+  "js"                : ["kss-assets/main.js"],
+  "scriptModule"      : false,
+  "isVitePugEnabled"  : true
 }
