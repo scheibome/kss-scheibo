@@ -61,7 +61,7 @@ const buildStyleguide = async () => {
 build({ kssOptions });
 
 // rebuild styleguide on every change to the css files
-watch('path/to/css/files', buildStyleguide);
+watch('path/to/css/files/**/*.css', buildStyleguide);
 ```
 ```
 
