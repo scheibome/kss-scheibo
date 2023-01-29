@@ -232,6 +232,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			};
 
 			// Check if the markup is a file path.
+			// eslint-disable-next-line no-useless-escape
 			if (template.markup.search('^[^\n]+\.(html|pug|' + templateExtension + ')$') === -1) {
 				if (this.options.verbose) {
 					this.log(' - ' + template.reference + ': inline markup');
