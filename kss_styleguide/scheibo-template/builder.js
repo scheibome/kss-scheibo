@@ -66,8 +66,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/modifierBodyClass')(this.Handlebars);
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars, this.options);
-			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
-			require('../../lib/modules/modifierIsVitePugEnabled')(this.Handlebars, this.options);
+			require('../../lib/modules/modifierInsertSection')(this.Handlebars, this.options);
 			require('../../lib/modules/modifierHtmlLang')(this.Handlebars);
 			require('../../lib/modules/wrapper')(this.Handlebars);
 			return styleGuide;
