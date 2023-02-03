@@ -14,6 +14,16 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		super();
 
 		this.addOptionDefinitions({
+			isVitePugEnabled: {
+				group: 'Style guide:',
+				boolean: true,
+				multiple: false,
+				describe: 'Whether the styleguide is used in a Vite environment',
+				default: false
+			},
+		});
+
+		this.addOptionDefinitions({
 			scriptModule: {
 				group: 'Style guide:',
 				boolean: true,
@@ -56,7 +66,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/modifierBodyClass')(this.Handlebars);
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars, this.options);
-			require('../../lib/modules/modifierInsertSection')(this.Handlebars);
+			require('../../lib/modules/modifierInsertSection')(this.Handlebars, this.options);
 			require('../../lib/modules/modifierHtmlLang')(this.Handlebars);
 			require('../../lib/modules/wrapper')(this.Handlebars);
 			return styleGuide;
@@ -392,7 +402,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 				const isPugFile = path.extname(filepath) === '.pug';
 				if (isPugFile) {
-					const pugFn = pug.compileFile(filepath);
+					const pugFn = pug.compileFile(filepath, { pretty: true });
 					output = pugFn();
 				}
 
