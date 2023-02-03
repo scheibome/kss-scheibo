@@ -66,7 +66,7 @@
   "latedef"       : true,
   "maxparams"     : 3,
   "maxdepth"      : 3,
-  "maxstatements" : 10,
+  "maxstatements" : 20,
   "maxcomplexity" : 10,
   "maxlen"        : 130,
   "newcap"        : true,
