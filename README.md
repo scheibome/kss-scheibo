@@ -30,7 +30,8 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
   "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
-  "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
+  "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
+  "scriptModule" : false
 }
 ```
 

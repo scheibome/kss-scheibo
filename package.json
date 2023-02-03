@@ -12,13 +12,18 @@
     "cname": "mkdirp docs -p && node .npm-scripts/cnameCreate.js",
     "scss:demo": "sass --style=compressed --no-source-map source/scss:docs/kss-assets",
     "css": "npm run kss && npm run tailwind && npm rum scss:demo",
-    "build": "npm run clean && npm run cname && npm run css && npm run kss && echo \"Please copy the 'kss_styleguide/kss-homepage.md' to 'README.md'\"",
+    "build": "npm run clean && npm run cname && npm run css && npm run kss && npm run sync:js && echo \"Please copy the 'kss_styleguide/kss-homepage.md' to 'README.md'\"",
+    "sync:js": "cp source/javascripts/main.js docs/kss-assets/main.js",
     "browsersync": "browser-sync start --port 8856 --server docs --browser firefox --files docs/**/*",
     "tailwind": "postcss kss_styleguide/scheibo-template/kss-assets/kss.css -o kss_styleguide/scheibo-template/kss-assets/kss.min.css",
     "webhint-1": "hint http://localhost:8856/section-1.html",
     "webhint-2": "hint http://localhost:8856/section-2.html",
     "webhint-3": "hint http://localhost:8856/section-3.html",
     "webhint": "npm-run-all webhint-1 webhint-2 webhint-3"
+  },
+  "dependencies": {
+    "create-html": "https://github.com/scheibome/create-html/tarball/1cbbdd8",
+    "kss": "^3.1.0"
   },
   "devDependencies": {
     "@hint/configuration-accessibility": "^2.0.15",
@@ -45,9 +50,5 @@
     "theme",
     "living styleguide",
     "LSG"
-  ],
-  "dependencies": {
-    "create-html": "^4.1.0",
-    "kss": "^3.1.0"
-  }
+  ]
 }
