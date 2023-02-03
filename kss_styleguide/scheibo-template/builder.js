@@ -402,7 +402,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 
 				const isPugFile = path.extname(filepath) === '.pug';
 				if (isPugFile) {
-					const pugFn = pug.compileFile(filepath);
+					const pugFn = pug.compileFile(filepath, { pretty: true });
 					output = pugFn();
 				}
 
