@@ -1,6 +1,6 @@
 {
   "name": "kss-scheibo",
-  "version": "1.11.0",
+  "version": "2.0.0",
   "description": "A custom template for the kss-node living styleguide.",
   "main": "lib/index.js",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
