@@ -22,7 +22,7 @@
     "webhint": "npm-run-all webhint-1 webhint-2 webhint-3"
   },
   "dependencies": {
-    "create-html": "https://github.com/scheibome/create-html/tarball/7967580",
+    "create-html": "https://github.com/scheibome/create-html/tarball/1cbbdd8",
     "kss": "^3.1.0"
   },
   "devDependencies": {
