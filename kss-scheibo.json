@@ -10,5 +10,5 @@
   "css"             : ["kss-assets/docs.css"],
   "js"              : ["kss-assets/main.js"],
   "scriptModule"    : true,
-  "isVitePugEnabled": true
+  "isVitePugEnabled": false
 }
