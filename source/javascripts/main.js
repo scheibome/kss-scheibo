@@ -1,2 +1,1 @@
-// eslint-ignore-next-line
-console.log('main.js is loaded');
+console.info('main.js is loaded');
