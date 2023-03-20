@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "A custom template for the kss-node living styleguide.",
   "main": "lib/index.js",
+  "types": "lib/types.d.ts",
   "repository": "https://github.com/scheibome/kss-scheibo.git",
   "license": "MIT",
   "homepage": "https://kss-scheibo.scheibitz.com",
