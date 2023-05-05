@@ -54,7 +54,7 @@ const { build, watch } = require('kss-scheibo');
 const config = fs.readJsonSync('kss-scheibo.json');
 
 const buildStyleguide = async () => {
-    await build(config);
+  await build(config);
 };
 
 // build styleguide initially
@@ -62,7 +62,6 @@ build({ kssOptions });
 
 // rebuild styleguide on every change to the css files
 watch('path/to/css/files/**/*.css', buildStyleguide);
-```
 ```
 
 ## Modifications

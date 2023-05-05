@@ -126,7 +126,8 @@ For all configurations see <a href="https://github.com/kss-node/kss-node#using-t
   &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;BodyClass&quot;, &quot;HtmlLang&quot;],
   &quot;source&quot;       : &quot;assets/&quot;,
   &quot;destination&quot;  : &quot;../styleguide/&quot;,
-  &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
+  &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
+  &quot;scriptModule&quot; : false
 }
 </code></pre>
 <h2>Generate</h2>
@@ -134,15 +135,21 @@ For all configurations see <a href="https://github.com/kss-node/kss-node#using-t
 <p><code>node node_modules/kss/bin/kss --config [yourconfigname].json</code></p>
 <p>or</p>
 <p><code>node node_modules/kss/bin/kss --source &quot;assets/&quot; --destination &quot;../styleguide/&quot; --builder &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot; --custom &quot;['Colors', 'Wrapper', 'RequireJS']&quot; </code> etc.</p>
-<h2>Using kss-scheibo with Gulp</h2>
-<pre class="hljs"><code class="language-">var gulp = require('gulp');
-var exec = require('child_process').exec;
+<h2>Using kss-scheibo</h2>
+<pre class="hljs"><code class="language-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs-extra&#x27;</span>);
+<span class="hljs-keyword">const</span> { build, watch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;kss-scheibo&#x27;</span>);
 
-gulp.task('kss', function(cb) {
-	exec('node node_modules/kss/bin/kss --config kss-scheibo.json', function(err) {
-		cb(err);
-	});
-});
+<span class="hljs-keyword">const</span> config = fs.readJsonSync(<span class="hljs-string">&#x27;kss-scheibo.json&#x27;</span>);
+
+<span class="hljs-keyword">const</span> buildStyleguide = <span class="hljs-keyword">async</span> () =&gt; {
+    <span class="hljs-keyword">await</span> build(config);
+};
+
+<span class="hljs-comment">// build styleguide initially</span>
+build({ kssOptions });
+
+<span class="hljs-comment">// rebuild styleguide on every change to the css files</span>
+watch(<span class="hljs-string">&#x27;path/to/css/files/**/*.css&#x27;</span>, buildStyleguide);
 </code></pre>
 <h2>Modifications</h2>
 <h4>Insert section into another</h4>

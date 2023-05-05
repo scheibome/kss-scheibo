@@ -1,7 +1,7 @@
 # KSS-Scheibo - a template for the KSS-node styleguide
 
 [![npm version](https://badge.fury.io/js/kss-scheibo.svg?style=flat)](https://npmjs.org/package/kss-scheibo)
- [![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg)
+[![Issues](https://img.shields.io/github/issues/scheibome/kss-scheibo.svg)]( https://github.com/scheibome/kss-scheibo/issues) ![npm](https://img.shields.io/npm/dt/kss-scheibo.svg)
 ![npm](https://img.shields.io/npm/l/kss-scheibo.svg)
 
 
@@ -30,7 +30,8 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
   "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
-  "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css']
+  "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
+  "scriptModule" : false
 }
 ```
 
@@ -44,17 +45,23 @@ or
 
 ``node node_modules/kss/bin/kss --source "assets/" --destination "../styleguide/" --builder "node_modules/kss-scheibo/kss_styleguide/scheibo-template/" --custom "['Colors', 'Wrapper', 'RequireJS']" `` etc.
 
-## Using kss-scheibo with Gulp
+## Using kss-scheibo
 
-```
-var gulp = require('gulp');
-var exec = require('child_process').exec;
+```js
+const fs = require('fs-extra');
+const { build, watch } = require('kss-scheibo');
 
-gulp.task('kss', function(cb) {
-	exec('node node_modules/kss/bin/kss --config kss-scheibo.json', function(err) {
-		cb(err);
-	});
-});
+const config = fs.readJsonSync('kss-scheibo.json');
+
+const buildStyleguide = async () => {
+    await build(config);
+};
+
+// build styleguide initially
+build({ kssOptions });
+
+// rebuild styleguide on every change to the css files
+watch('path/to/css/files/**/*.css', buildStyleguide);
 ```
 
 ## Modifications
