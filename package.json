@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "chokidar": "^3.5.3",
-    "create-html": "https://github.com/scheibome/create-html/tarball/1cbbdd8",
+    "create-html": "github:scheibome/create-html#1cbbdd8",
     "fs-extra": "^11.1.0",
     "kss": "^3.1.0",
     "pug": "^3.0.2"
