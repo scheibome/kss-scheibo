@@ -1,4 +1,4 @@
-type KSSBuildOptions = {
+export type KSSBuildOptions = {
     /**
      * The title of the styleguide.
      */
