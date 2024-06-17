@@ -124,7 +124,7 @@ For all configurations see <a href="https://github.com/kss-node/kss-node#using-t
 <pre class="hljs"><code class="language-">{
   &quot;title&quot;        : &quot;the name of your styleguide&quot;,
   &quot;builder&quot;      : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
-  &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;BodyClass&quot;, &quot;HtmlLang&quot;],
+  &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;HTMLClass&quot;, &quot;BodyClass&quot;, &quot;HtmlLang&quot;],
   &quot;source&quot;       : &quot;assets/&quot;,
   &quot;destination&quot;  : &quot;../styleguide/&quot;,
   &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
@@ -227,6 +227,18 @@ Markup: templates/02_components/form.html
 
 Requirejs:
   /javascripts/Vendor/require.js : /javascripts/main
+
+Styleguide 2.2
+*/
+</code></pre>
+<h4>HTMLclass</h4>
+<p>The markup for htmlclass in fullscreen mode is specified as follows:</p>
+<pre class="hljs"><code class="language-">/*
+Form
+
+Markup: templates/02_components/form.html
+
+htmlclass: demohtmlclass1 demohtmlclass2
 
 Styleguide 2.2
 */

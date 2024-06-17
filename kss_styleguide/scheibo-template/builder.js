@@ -42,6 +42,14 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		});
 
 		this.addOptionDefinitions({
+			htmlclass: {
+				group: 'Style guide:',
+				string: true,
+				describe: 'Add a html class in every single fullscreen mode.'
+			}
+		});
+
+		this.addOptionDefinitions({
 			bodyclass: {
 				group: 'Style guide:',
 				string: true,
@@ -63,6 +71,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/colors')(this.Handlebars);
 			require('../../lib/modules/modifierRequireJs')(this.Handlebars);
 			require('../../lib/modules/modifierScriptModule')(this.Handlebars);
+			require('../../lib/modules/modifierHTMLClass')(this.Handlebars);
 			require('../../lib/modules/modifierBodyClass')(this.Handlebars);
 			require('../../lib/modules/modifierInsertCode')(this.Handlebars);
 			require('../../lib/modules/modifierFullscreen')(this.Handlebars, this.options);

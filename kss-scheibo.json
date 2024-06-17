@@ -6,7 +6,7 @@
   "source"          : "source/",
   "destination"     : "docs",
   "homepage"        : "kss_styleguide/kss-homepage.md",
-  "custom"          : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
+  "custom"          : ["Colors", "Wrapper", "RequireJS", "HtmlClass", "BodyClass", "HtmlLang"],
   "css"             : ["kss-assets/docs.css"],
   "js"              : ["kss-assets/main.js"],
   "scriptModule"    : true,

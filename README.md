@@ -27,7 +27,7 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 {
   "title"        : "the name of your styleguide",
   "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"],
+  "custom"       : ["Colors", "Wrapper", "RequireJS", "HTMLClass", "BodyClass", "HtmlLang"],
   "source"       : "assets/",
   "destination"  : "../styleguide/",
   "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
@@ -54,7 +54,7 @@ const { build, watch } = require('kss-scheibo');
 const config = fs.readJsonSync('kss-scheibo.json');
 
 const buildStyleguide = async () => {
-  await build(config);
+    await build(config);
 };
 
 // build styleguide initially
@@ -167,6 +167,22 @@ Markup: templates/02_components/form.html
 
 Requirejs:
   /javascripts/Vendor/require.js : /javascripts/main
+
+Styleguide 2.2
+*/
+```
+
+#### HTMLclass
+
+The markup for htmlclass in fullscreen mode is specified as follows:
+
+```
+/*
+Form
+
+Markup: templates/02_components/form.html
+
+htmlclass: demohtmlclass1 demohtmlclass2
 
 Styleguide 2.2
 */
