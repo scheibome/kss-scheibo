@@ -1,11 +1,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --kss-scheibo--maincolor: #1B7AC8;
-  --kss-scheibo--maincolor-con: #FFFFFF;
-}
-
 .kss-scheibo__body {
   @apply overflow-auto m-0 bg-gray-50;
 }

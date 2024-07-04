@@ -10,5 +10,6 @@
   "css"             : ["kss-assets/docs.css"],
   "js"              : ["kss-assets/main.js"],
   "scriptModule"    : true,
-  "isVitePugEnabled": false
+  "isVitePugEnabled": false,
+  "themeColor"      : "#1B7AC8"
 }
