@@ -55,6 +55,16 @@ export type KSSBuildOptions = {
      * Enable if the styleguide is built using Vite and vite-plugin-pug
      */
     isVitePugEnabled: boolean,
+
+    /**
+     * The theme color of the styleguide in hex format
+     */
+    themeColor: `#${string}`,
+
+    /**
+     * The theme text color of the styleguide in hex format
+     */
+    themeTextColor: `#${string}`,
 }
 
 declare module 'kss-scheibo' {
