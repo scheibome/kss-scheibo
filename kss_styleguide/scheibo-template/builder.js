@@ -44,9 +44,9 @@ function shadeColor(hexColor, percent) {
 	const adjust = lightness > 0.4 ? -1 : 1;
 
 	// Manipulate
-	const newR = Math.min(255, Math.max(0, r + adjust * (percent * 255 / 100)));
-	const newG = Math.min(255, Math.max(0, g + adjust * (percent * 255 / 100)));
-	const newB = Math.min(255, Math.max(0, b + adjust * (percent * 255 / 100)));
+	const newR = Math.min(255, Math.max(0, r + adjust * ((percent * 255) / 100)));
+	const newG = Math.min(255, Math.max(0, g + adjust * ((percent * 255) / 100)));
+	const newB = Math.min(255, Math.max(0, b + adjust * ((percent * 255) / 100)));
 
 	// RGB to HEX
 	const newHexRColor = `${newR.toString(16)}`.padStart(2, '0');
@@ -187,7 +187,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			themeTextColor,
 		});
 
-		return super.prepare(styleGuide).then((styleGuide) => {
+		return super.prepare(styleGuide).then((localStyleguide) => {
 			require('../../lib/modules/colors')(this.Handlebars);
 			require('../../lib/modules/modifierRequireJs')(this.Handlebars);
 			require('../../lib/modules/modifierScriptModule')(this.Handlebars);
@@ -198,7 +198,7 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 			require('../../lib/modules/modifierInsertSection')(this.Handlebars, this.options);
 			require('../../lib/modules/modifierHtmlLang')(this.Handlebars);
 			require('../../lib/modules/wrapper')(this.Handlebars);
-			return styleGuide;
+			return localStyleguide;
 		});
 	}
 
