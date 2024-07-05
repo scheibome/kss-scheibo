@@ -8,6 +8,10 @@ const glob = Promise.promisify(require('glob'));
 const fs = Promise.promisifyAll(require('fs-extra'));
 const pug = require('pug');
 
+function isValidHexColor(hexCode) {
+	return /^#([A-Fa-f0-9]{6})$/.test(hexCode);
+}
+
 function shadeColor(hexColor, percent) {
 	let color = hexColor;
 
@@ -52,7 +56,7 @@ function shadeColor(hexColor, percent) {
 	return `#${newHexRColor}${newHexGColor}${newHexBColor}`;
 }
 
-function createFaviconFile(outputPath, hexColor) {
+function createFaviconFile({ outputPath, themeColor }) {
 	const faviconFilePath = path.resolve(outputPath, 'kss-assets/kss-favicon.svg');
 
 	fs.removeSync(faviconFilePath);
@@ -60,9 +64,9 @@ function createFaviconFile(outputPath, hexColor) {
 	const faviconContent = `
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 			<g fill="none" fill-rule="nonzero">
-				<path fill="${hexColor}" d="M4.5 0C5.32842712 0 6 .67157287 6 1.5V13c0 1.6568542-1.34314575 3-3 3s-3-1.3431458-3-3V1.5C0 .67157287.67157287 0 1.5 0ZM3 11c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2Z" />
-				<path fill="${shadeColor(hexColor, 20)}" d="M7.5 12.743V4.257l1.51-1.51c.28133215-.28151251.6630087-.43967977 1.061-.43967977.3979913 0 .7796678.15816726 1.061.43967977l2.121 2.121c.2815125.28133215.4396798.6630087.4396798 1.061 0 .3979913-.1581673.77966785-.4396798 1.061L7.5 12.743Z" />
-				<path fill="${shadeColor(hexColor, 40)}" d="M6.364 16H14.5c.8284271 0 1.5-.6715729 1.5-1.5v-3c0-.8284271-.6715729-1.5-1.5-1.5h-2.136l-6 6Z" />
+				<path fill="${themeColor}" d="M4.5 0C5.32842712 0 6 .67157287 6 1.5V13c0 1.6568542-1.34314575 3-3 3s-3-1.3431458-3-3V1.5C0 .67157287.67157287 0 1.5 0ZM3 11c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2Z" />
+				<path fill="${shadeColor(themeColor, 20)}" d="M7.5 12.743V4.257l1.51-1.51c.28133215-.28151251.6630087-.43967977 1.061-.43967977.3979913 0 .7796678.15816726 1.061.43967977l2.121 2.121c.2815125.28133215.4396798.6630087.4396798 1.061 0 .3979913-.1581673.77966785-.4396798 1.061L7.5 12.743Z" />
+				<path fill="${shadeColor(themeColor, 40)}" d="M6.364 16H14.5c.8284271 0 1.5-.6715729 1.5-1.5v-3c0-.8284271-.6715729-1.5-1.5-1.5h-2.136l-6 6Z" />
 			</g>
 		</svg>
 	`;
@@ -70,15 +74,15 @@ function createFaviconFile(outputPath, hexColor) {
 	fs.outputFile(faviconFilePath, faviconContent);
 }
 
-function createThemeCSSFile(outputPath, hexColor) {
+function createThemeCSSFile({ outputPath, themeColor, themeTextColor }) {
 	const themeCSSFilePath = path.resolve(outputPath, 'kss-assets/kss-theme.css');
 
 	fs.removeSync(themeCSSFilePath);
 
 	const themeCSSContent = `
 		:root {
-		  --kss-scheibo--maincolor: ${hexColor};
-		  --kss-scheibo--maincolor-con: #FFFFFF;
+		  --kss-scheibo--maincolor: ${themeColor};
+		  --kss-scheibo--maincolor-con: ${themeTextColor};
 		}
 	`;
 
@@ -150,16 +154,38 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 				default: '#1B7AC8',
 			},
 		});
+
+		this.addOptionDefinitions({
+			themeTextColor: {
+				group: 'Style guide:',
+				string: true,
+				describe: 'Theme text color',
+				default: '#FFFFFF',
+			},
+		});
 	}
 
 	prepare(styleGuide) {
-		if (!this.options['theme-color'].startsWith('#')) {
-			throw new Error('Theme color must be a hex color and start with #');
+		const themeColor = this.options['theme-color'];
+		if (!isValidHexColor(themeColor)) {
+			throw new Error(`Theme color must be a hex color and formatted like this #1B7AC8, ${themeColor} given`);
 		}
 
-		const themeColor = this.options.themeColor[0];
-		createFaviconFile(this.options.destination, themeColor);
-		createThemeCSSFile(this.options.destination, themeColor);
+		const themeTextColor = this.options['theme-text-color'];
+		if (!isValidHexColor(themeTextColor)) {
+			throw new Error(`Theme color must be a hex color and formatted like this #FFFFFF, ${themeTextColor} given`);
+		}
+
+		createFaviconFile({
+			outputPath: this.options.destination,
+			themeColor,
+		});
+
+		createThemeCSSFile({
+			outputPath: this.options.destination,
+			themeColor,
+			themeTextColor,
+		});
 
 		return super.prepare(styleGuide).then((styleGuide) => {
 			require('../../lib/modules/colors')(this.Handlebars);
