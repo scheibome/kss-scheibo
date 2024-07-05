@@ -166,12 +166,12 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 	}
 
 	prepare(styleGuide) {
-		const themeColor = this.options['theme-color'];
+		const themeColor = this.options.themeColor[0];
 		if (!isValidHexColor(themeColor)) {
 			throw new Error(`Theme color must be a hex color and formatted like this #1B7AC8, ${themeColor} given`);
 		}
 
-		const themeTextColor = this.options['theme-text-color'];
+		const themeTextColor = this.options.themeTextColor[0];
 		if (!isValidHexColor(themeTextColor)) {
 			throw new Error(`Theme color must be a hex color and formatted like this #FFFFFF, ${themeTextColor} given`);
 		}
