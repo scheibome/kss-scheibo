@@ -242,11 +242,11 @@ Is the markup a file, the name must be unique.
 
 #### Theme Color
 
-You can set your own maincolors for the theme by set the following css pseudo-classes
+You can set your own theme colors by using these options:
 
 ```
-:root {
-  #{--kss-scheibo--maincolor}: #6CB2EB;
-  #{--kss-scheibo--maincolor-con}: #FFFFFF;
+{
+  "themeColor"      : "#1B7AC8",
+  "themeTextColor"  : "#FFFFFF"
 }
 ```
