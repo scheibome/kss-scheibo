@@ -123,13 +123,15 @@
 <p>Create a JSON file like <code>kss-scheibo.json</code> in your package.json root with the following lines.
 For all configurations see <a href="https://github.com/kss-node/kss-node#using-the-command-line-tool">kss-node documentation</a></p>
 <pre class="hljs"><code class="language-">{
-  &quot;title&quot;        : &quot;the name of your styleguide&quot;,
-  &quot;builder&quot;      : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
-  &quot;custom&quot;       : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;HTMLClass&quot;, &quot;BodyClass&quot;, &quot;HtmlLang&quot;],
-  &quot;source&quot;       : &quot;assets/&quot;,
-  &quot;destination&quot;  : &quot;../styleguide/&quot;,
-  &quot;css&quot;          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
-  &quot;scriptModule&quot; : false
+  &quot;title&quot;           : &quot;the name of your styleguide&quot;,
+  &quot;builder&quot;         : &quot;node_modules/kss-scheibo/kss_styleguide/scheibo-template/&quot;,
+  &quot;custom&quot;          : [&quot;Colors&quot;, &quot;Wrapper&quot;, &quot;RequireJS&quot;, &quot;HTMLClass&quot;, &quot;BodyClass&quot;, &quot;HtmlLang&quot;],
+  &quot;source&quot;          : &quot;assets/&quot;,
+  &quot;destination&quot;     : &quot;../styleguide/&quot;,
+  &quot;css&quot;             : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
+  &quot;scriptModule&quot;    : false,
+  &quot;themeColor&quot;      : &quot;#1B7AC8&quot;,
+  &quot;themeTextColor&quot;  : &quot;#FFFFFF&quot;
 }
 </code></pre>
 <h2>Generate</h2>
@@ -278,10 +280,10 @@ To change the lang attribute, add <code>&quot;htmllang&quot;: &quot;de&quot;</co
 <h4>Hint</h4>
 <p>Is the markup a file, the name must be unique.</p>
 <h4>Theme Color</h4>
-<p>You can set your own maincolors for the theme by set the following css pseudo-classes</p>
-<pre class="hljs"><code class="language-">:root {
-  #{--kss-scheibo--maincolor}: #6CB2EB;
-  #{--kss-scheibo--maincolor-con}: #FFFFFF;
+<p>You can set your own theme colors by using these options:</p>
+<pre class="hljs"><code class="language-">{
+  &quot;themeColor&quot;      : &quot;#1B7AC8&quot;,
+  &quot;themeTextColor&quot;  : &quot;#FFFFFF&quot;
 }
 </code></pre>
 

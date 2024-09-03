@@ -25,13 +25,15 @@ For all configurations see [kss-node documentation](https://github.com/kss-node/
 
 ```
 {
-  "title"        : "the name of your styleguide",
-  "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
-  "custom"       : ["Colors", "Wrapper", "RequireJS", "HTMLClass", "BodyClass", "HtmlLang"],
-  "source"       : "assets/",
-  "destination"  : "../styleguide/",
-  "css"          : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
-  "scriptModule" : false
+  "title"           : "the name of your styleguide",
+  "builder"         : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
+  "custom"          : ["Colors", "Wrapper", "RequireJS", "HTMLClass", "BodyClass", "HtmlLang"],
+  "source"          : "assets/",
+  "destination"     : "../styleguide/",
+  "css"             : ['URL_of_a_CSS_file_to_include_in_the_style_guide.css'],
+  "scriptModule"    : false,
+  "themeColor"      : "#1B7AC8",
+  "themeTextColor"  : "#FFFFFF"
 }
 ```
 
@@ -240,11 +242,11 @@ Is the markup a file, the name must be unique.
 
 #### Theme Color
 
-You can set your own maincolors for the theme by set the following css pseudo-classes
+You can set your own theme colors by using these options:
 
 ```
-:root {
-  #{--kss-scheibo--maincolor}: #6CB2EB;
-  #{--kss-scheibo--maincolor-con}: #FFFFFF;
+{
+  "themeColor"      : "#1B7AC8",
+  "themeTextColor"  : "#FFFFFF"
 }
 ```
