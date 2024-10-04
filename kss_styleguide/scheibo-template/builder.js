@@ -3,9 +3,8 @@
 
 const KssBuilderHandlebars = require('kss/builder/handlebars');
 const path = require('path');
-const Promise = require('bluebird');
-const glob = Promise.promisify(require('glob'));
-const fs = Promise.promisifyAll(require('fs-extra'));
+const { glob } = require('glob');
+const fs = require('fs-extra');
 const pug = require('pug');
 
 function isValidHexColor(hexCode) {
@@ -71,7 +70,7 @@ function createFaviconFile({ outputPath, themeColor }) {
 		</svg>
 	`;
 
-	fs.outputFile(faviconFilePath, faviconContent);
+	fs.outputFileSync(faviconFilePath, faviconContent);
 }
 
 function createThemeCSSFile({ outputPath, themeColor, themeTextColor }) {
@@ -86,7 +85,7 @@ function createThemeCSSFile({ outputPath, themeColor, themeTextColor }) {
 		}
 	`;
 
-	fs.outputFile(themeCSSFilePath, themeCSSContent);
+	fs.outputFileSync(themeCSSFilePath, themeCSSContent);
 }
 
 class KssBuilderScheibo extends KssBuilderHandlebars {
@@ -519,14 +518,14 @@ class KssBuilderScheibo extends KssBuilderHandlebars {
 		let options = {};
 		// Returns a promise to read/load a template provided by the builder.
 		options.readBuilderTemplate = (name) => {
-			return fs.readFileAsync(path.resolve(this.options.builder, name + '.hbs'), 'utf8').then(content => {
+			return fs.readFile(path.resolve(this.options.builder, name + '.hbs'), 'utf8').then(content => {
 				return this.Handlebars.compile(content);
 			});
 		};
 
 		// Returns a promise to read/load a template specified by a section.
 		options.readSectionTemplate = (name, filepath) => {
-			return fs.readFileAsync(filepath, 'utf8').then(fileContent => {
+			return fs.readFile(filepath, 'utf8').then(fileContent => {
 				let output = fileContent;
 
 				const isPugFile = path.extname(filepath) === '.pug';
