@@ -6,10 +6,7 @@ node_modules/
 source/
 .gitignore
 .package-lock.json
-.jscsrc
-.jshintrc
 .idea/
 .editorconfig
-/hint-report
 postcss.config.js
 tailwind.config.js
