@@ -27,7 +27,7 @@
     "chokidar": "^3.5.3",
     "create-html": "github:scheibome/create-html#1cbbdd8",
     "fs-extra": "^11.1.0",
-    "kss": "github:scheibome/kss-node#facda2c",
+    "kss": "github:scheibome/kss-node#3bfdbe2",
     "pug": "^3.0.2"
   },
   "devDependencies": {
